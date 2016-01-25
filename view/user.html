@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gallery</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    </head>
+<body>
+
+Login as Admin <br>
+<input type="text" placeholder="Admin Username" id="username"><br>
+<input type="text" placeholder="Admin Password" id="password"><br>
+<button id="submit"> Register!</button><br><br>
+    
+Or<br>
+
+    <form action="landing.html">
+        <input type="submit"  value="Sign Up">
+    </form>
+
+</body>
+
+<script>
+    $(document).ready(function(){
+       
+        document.getElementById("sub").onclick = function(){
+        
+            $.ajax({
+               url:"../controller/user.php",
+               dataType: "html",
+               type: "POST",
+               data:{
+                   method: "insert",
+                   username: document.getElementById("username").value,
+                   password: document.getElementById("password").value,
+               },
+                success: function(resp){
+                    alert ("hi");
+                }
+                
+            });
+        
+        }
+        
+        
+    });
+    
+</script>    
+    
+    
+</html>

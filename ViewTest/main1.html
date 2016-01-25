@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secret Passage Storage</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>    
+<body>
+    <!--
+    <input id="password" type="text" placeholder="Password"/>
+    <button id="submit">Store Password</button>
+    <button id="view"> View All Passwords</button>
+
+-->
+    <p>Create a Profile!</p>
+    <input id="name" type="text" placeholder="Enter a Name"/><br>
+    <input id="image" type="text" placeholder="Add an Image!"/><br>
+    <input id="comment" type="text" placeholder="Add a comment!"/> <br>
+    <input id="password" type="text" placeholder="Password"/><br>
+    <!--button id="view"> View All Passwords</button-->
+    <button id="enter">Try It Out!</button>
+    
+    
+    <div id="allpasswords"></div><button id="update_but">Update Password</button>
+    <div id="update"></div>
+
+        
+
+</body>    
+<script>
+$(document).ready(function(){
+    var editDiv = null;
+    document.getElementById("update_but").onclick = function(){
+         var pass_id = this.dataset.passid;
+                        $.ajax({
+                            url:"../ControllerTest/password_c.php",
+                            dataType: "json",
+                            data:{
+                                method: "update",
+                                id: pass_id,
+                                password:document.getElementById("pass_input").value,
+                            },
+                            type:"POST",
+                            success:function(resp){
+                                alert("updated");
+                                editDiv.innerHTML = document.getElementById("pass_input").value
+                                console.log(editDiv);
+                                
+                                
+                            },
+                        
+                        });
+        
+        }
+        document.getElementById("enter").onclick = function(){
+        $.ajax({
+            url:"../ControllerTest/password_c.php",
+            dataType:"html",
+            data:{
+                method:"enter",
+                image: document.getElementById("image").value,
+                name:document.getElementById("name").value,
+                comment:document.getElementById("comment").value,
+                password:document.getElementById("password").value, 
+            },
+            type: "POST",
+            success:function(resp){
+                console.log(resp);
+                location.reload();
+         
+                
+            }
+        
+        
+            });
+        }
+
+         
+        $.ajax({
+            url:"../ControllerTest/password_c.php",
+            dataType:"json",
+            data:{
+                method:"view",
+            },
+            type: "POST",
+            success:function(resp){
+                console.log(resp);
+                
+                for(var i = 0; i<resp.length; i++){  
+                var pass_div = document.createElement("div");
+                pass_div.innerHTML = resp[i].password;
+                document.getElementById("allpasswords").appendChild(pass_div);
+                pass_div.dataset.id = resp[i].id;
+                    
+                    pass_div.onclick = function(){
+                        var pass_input = document.createElement("input");
+                        pass_input.id = "pass_input";
+                        pass_input.value = this.innerHTML;
+                        document.getElementById("update").innerHTML = "";
+                        document.getElementById("update").appendChild(pass_input);
+                        document.getElementById("update_but").dataset.passid = this.dataset.id;
+                        editDiv = this;
+                       
+                    }
+                    
+                    var pass_del = document.createElement("button");
+                    pass_del.dataset.id = resp[i].id;
+                    pass_del.innerHTML = "delete";
+                    document.getElementById("allpasswords").appendChild(pass_del);
+                    pass_del.onclick = function(){
+                        var pass_id = this.dataset.id;
+                            $.ajax({
+                                url:"../ControllerTest/password_c.php",
+                                dataType:"json",
+                                data:{
+                                    method:"delete",
+                                    id: pass_id,
+                                },
+                                type: "POST",
+                                success:function(resp){
+                                    alert("deleted");
+                                    location.reload(); 
+                                }
+                            });
+                    }
+                }
+               
+            }
+      });
+
+
+            
+});     
+    
+</script>
+</html> 
