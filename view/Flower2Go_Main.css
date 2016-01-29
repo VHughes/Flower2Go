@@ -1,3 +1,25 @@
 @charset "UTF-8";
 /* CSS Document */
+body{
+	text-align:center;
+	background-color:#f6eef7;
+}
 
+button {
+	border: none;
+}
+
+p {
+	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
+}
+
+.but {
+	background-color:#ad7cb0;
+	border-radius: 10px;
+	width: 230px;
+	height: 60px;
+	margin-bottom: 7px;
+	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	color:#ffffff;
+}
