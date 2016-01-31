@@ -27,7 +27,7 @@ Sign Up as a New Admin Here <br>
         
             $.ajax({
                url:"../controller/user.php",
-               dataType: "html",
+               dataType: "json",
                type: "POST",
                data:{
                    method: "insert",
@@ -39,6 +39,7 @@ Sign Up as a New Admin Here <br>
                },
                 success: function(resp){
                     alert ("hi");
+                    console.log(resp);
                 }
                 
             });

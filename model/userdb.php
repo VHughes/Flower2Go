@@ -12,12 +12,14 @@ function insert_user(){
     echo $result;
     
 }
-function get_user(){
+function login_user(){
     global $db;
-    $query = "SELECT * FROM users WHERE username = ".$_POST['username']." AND password = ".$_POST['password']."";
-    $result = $db->query($query);
-    echo json_encode($result->fetchAll());
-    
+    if(isset($_POST['username']) && !empty($_POST['username'])){
+            $query = "SELECT username FROM users WHERE username = '".$_POST['username']."' ";
+            $result = $db->query($query);
+            echo json_encode($result->fetchAll());
+            
+    }
 }
 
 
