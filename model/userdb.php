@@ -1,5 +1,8 @@
 <?php
 include("connection.php");
+session_start();
+$id = session_id();
+print_r ($id);
 
 function insert_user(){
     global $db;
@@ -9,4 +12,13 @@ function insert_user(){
     echo $result;
     
 }
+function get_user(){
+    global $db;
+    $query = "SELECT * FROM users WHERE username = ".$_POST['username']." AND password = ".$_POST['password']."";
+    $result = $db->query($query);
+    echo json_encode($result->fetchAll());
+    
+}
+
+
 ?>

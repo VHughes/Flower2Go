@@ -3,43 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <title>Select Page</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>    
 <link href="Flower2Go_Main.css" rel="stylesheet" type="text/css">
 </head>
-<script>
-
-$(document).ready(
-	function(){
-		
-		$("#SinglesBut").click(function(){
-				$("#SinglesDiv").toggle(200);
-		});
-		
-		$("#BouquetsBut").click(function(){
-				$("#BouquetsDiv").toggle(200);
-		});
-		
-		$("#EventsBut").click(function(){
-				$("#EventsDiv").toggle(200);
-
-		});
-});
-</script>
 
 <body>
-<button id = "SinglesBut" class = "but">Singles</button></br>
-    <div id= 'SinglesDiv' style="display:none;"/>
-    <p>Singles pics!</p>
-    </div>
+<button id = "Singles">Singles</button></br>
+<button id = "Bouquets">Bouquets</button></br>
+<button id = "Events">Events</button>
 
-<button id = "BouquetsBut" class = "but">Bouquets</button></br>
-    <div id= 'BouquetsDiv' style="display:none;"/>
-    <p>Bouquet pics!</p>
-    </div>
-<button id = "EventsBut" class = "but">Events</button>
-    <div id= 'EventsDiv' style="display:none;"/>
-    <p>Events pics!</p>
-    </div>
+<script>
+$(document).ready(function(){
     
+   
+                        $.ajax({
+                            url: "../controller/user.php",
+                            type: "POST",
+                            dataType: "html",
+                            data: {
+                                method: "get_user",
+                                
+                            },
+                            success: function(resp){
+                                console.log(resp);
+                                for(var i = 0; i<resp.length; i++){
+                                var h3 = document.createElement("h3");
+                                document.body.appendChild(h3);
+                                h3.innerHTML = resp[i].password;
+                                } 
+    
+                }
+          });
+        
+    });
+
+
+
+
+</script>
+
+
+
+
+
+
 </body>
 </html>

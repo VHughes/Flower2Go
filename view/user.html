@@ -26,26 +26,27 @@ OR<br><br>
 
 <script>
     $(document).ready(function(){
-       
-        document.getElementById("sub").onclick = function(){
         
-            $.ajax({
-               url:"../controller/user.php",
-               dataType: "html",
-               type: "POST",
-               data:{
-                   method: "insert",
-                   username: document.getElementById("username").value,
-                   password: document.getElementById("password").value,
-               },
-                success: function(resp){
-                    alert ("hi");
+        document.getElementById("submit").onclick = function(){
+   
+                        $.ajax({
+                            url: "../controller/user.php",
+                            type: "POST",
+                            dataType: "json",
+                            data: {
+                                method: "get_user",
+                                username: document.getElementById("username").value,
+                                password: document.getElementById("password").value,
+                            },
+                            success: function(resp2){
+                                console.log(resp2);
+                                console.log(username);
+                                alert ("YOU LOGGED IN SUCCESSFULLY");
+    
                 }
-                
-            });
+          });
         
         }
-        
         
     });
     
