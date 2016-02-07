@@ -1,30 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Gallery</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-        <link href="CSS/Log_In.css" rel="stylesheet" type="text/css">
-		<link href="CSS/Flower2Go_Main.css" rel="stylesheet" type="text/css">
-    </head>
-<body>
-    
-<img id="logo" src="ASSETS/flower.png" height="100px" width="100px"><br><br>
-<button id="shop">SHOP NOW!</button><br><br>
+// JAVASCRIPT SHIET
 
-Login as Admin <br>
-<input type="text" placeholder="Admin Username" id="username"><br>
-<input type="text" placeholder="Admin Password" id="password"><br>
-<button id="submit"> Login </button><br><br>
-    
-OR<br><br>
-
-    <form action="landing.html">
-        Create a new administrator profile <a href="usersignup.html">here</a>
-    </form>
-
-</body>
-
-<script>
     $(document).ready(function(){
         
         var user_id= "";
@@ -52,8 +27,3 @@ OR<br><br>
                 
         
     });
-    
-</script>    
-    
-    
-</html>
