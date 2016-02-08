@@ -16,6 +16,8 @@ OR<br></br>
     <form action="landing.html">
         Create a new administrator profile <a href="usersignup.html">here</a>
 </form>   
+<button id="logout"> LOGOUT </button><br></br>
+
 
 <script>
 
@@ -36,14 +38,31 @@ OR<br></br>
                             success: function(resp2){
                                 alert("heyoOOO");
                                 console.log(resp2);
-                            
-                                
-                                
-                            
+                 
+                        }
+                  });
+
                 }
-          });
-            
-        }
+        
+        
+                document.getElementById("logout").onclick = function(){
+                            $.ajax({
+                            url: "../controller/logout.php",
+                            type: "POST",
+                            dataType: "html",
+                            data: {
+                                method: "post",
+                                username: document.getElementById("username").value,
+                                password: document.getElementById("password").value,
+                            },
+                            success: function(resp2){
+                                alert("loggggggged out!");
+                                console.log(resp2);
+                 
+                        }
+                  });
+
+                }
         
                 
         

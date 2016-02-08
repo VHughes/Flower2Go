@@ -23,7 +23,7 @@ class UserLoginAction {
 
         if(Session::get('isLoggedIn')) {
             Messages::addMessage("info", "You are already logged in.");
-            return;
+            return $this;
         } else {
             $response = array();
 
@@ -39,6 +39,7 @@ class UserLoginAction {
                     Session::set("id", $usr['ID']);
                     Session::set("isLoggedIn", true);
                     return $usr;
+                    return $usr['ID'];
 
                 } else {
                     Messages::addMessage("info", "Log in user and/or password incorrect.");
