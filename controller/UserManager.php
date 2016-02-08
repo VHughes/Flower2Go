@@ -36,7 +36,21 @@ class UserManager {
 
         return null;
     }
+    
+     public function listUsers() {
+        $sql = "SELECT username, firstname, lastname FROM users";
+        $rows = $this->db->query($sql);
+        return $rows;
+    }
 
+    
+    public function addUser($firstName, $lastName, $userName) {
+
+        $sql = "INSERT INTO users (firstname, lastname, username)
+            VALUES ('$firstName', '$lastName', '$userName',)";
+        $affectedRows = $this->db->affectRows($sql);
+        return $affectedRows;
+    }
 
 }
 

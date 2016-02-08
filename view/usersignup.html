@@ -13,10 +13,9 @@ Sign Up as a New Admin Here <br>
 <input type="text" placeholder="Username" id="username"><br>
 <input type="text" placeholder="Email" id="email"><br>
 <input type="text" placeholder="Password" id="password"><br>
-    
-<form action="Main_Page.html">    
-<button id="sub">GO!</button><br><br>
-</form>
+     
+<button id="sub">GO!</button><br></br>
+
     
 </body>    
     
@@ -26,11 +25,12 @@ Sign Up as a New Admin Here <br>
         document.getElementById("sub").onclick = function(){
         
             $.ajax({
-               url:"../controller/user.php",
-               dataType: "json",
+               url:"../controller/users.php",
+               dataType: "html",
                type: "POST",
                data:{
-                   method: "insert",
+                   method: "post",
+                   action: "add",
                    username: document.getElementById("username").value,
                    password: document.getElementById("password").value,
                    firstname: document.getElementById("firstname").value,
