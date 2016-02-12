@@ -15,29 +15,13 @@ p {
 
 .but {
 	background-color:#ad7cb0;
-	/*border-radius: 10px;*/
+	border-radius: 10px;
 	width: 75%;
 	height: 60px;
 	margin-bottom: 7px;
 	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
 	font-size: 12px;
 	color:#ffffff;
-}
-
-.loginInputs {
-	/*border-radius: 10px;*/
-	width: 75%;
-	height: 30px;
-	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
-	font-size: 12px;
-}
-
-#password {
-	margin-bottom: 10px;
-}
-
-#SignUp {
-		font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
 }
 
 #SinglesDiv {
