@@ -13,6 +13,10 @@ p {
 	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
 }
 
+span {
+    font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
+}
+
 .but {
 	background-color:#ad7cb0;
 	border-radius: 10px;
@@ -76,27 +80,31 @@ p {
 }
 
 #BouquetsDiv {
-	background-color:#44D5F0;
-	border-radius: 10px;
+	/*background-color:#44D5F0;
+	border-radius: 10px;*/
 	/*width:230px;*/
-	height:300px;
+	/*height:300px;
 	align-content:center;
 	width:75%;
 	margin:0 auto;
 	margin-top:-17px;
-	margin-bottom:6px;
+	margin-bottom:6px;*/
 }
 
 #EventsDiv {
-	background-color:#44D5F0;
-	border-radius: 10px;
+	/*background-color:#44D5F0;
+	border-radius: 10px;*/
 	/*width:230px;*/
-	height:300px;
+	/*height:300px;
 	align-content:center;
 	width:75%;
 	margin:0 auto;
 	margin-top:-17px;
-	margin-bottom:6px;
+	margin-bottom:6px;*/
+}
+
+.pic:hover {
+    opacity: 0.3; filter: alpha(opacity=30);
 }
 
 #SinglesBut {
