@@ -1,22 +1,24 @@
 <!-- View Fragment -->
+
 <nav id="nav" role="navigation" metal:define-macro="nav_bar">
 
+    <link href="CSS/Flower2Go_Main.css" rel="stylesheet" type="text/css"/>
     
-<img id="logo" src="ASSETS/flower.png" height="100px" width="100px"/><br></br>
-<button id="shop">SHOP NOW!</button><br></br>
+    <img id="logo" src="ASSETS/Flower2Go_Logo2.png" height="200px" width="180px"/><br></br><br></br>
+<button id="shop" class="but">Shop Now!</button><br></br>
 
-    Login as Admin <br></br>
-<input type="text" placeholder="Admin Username" id="username"/><br></br>
+<p>Login as Admin</p> <br></br>
+<input type="text" placeholder="Admin Username" id="username" class="loginInputs"/><br></br>
 
-<input type="text" placeholder="Admin Password" id="password"/><br></br>
-<button id="submit"> Login </button><br></br>
+<input type="text" placeholder="Admin Password" id="password" class="loginInputs"/><br></br>
+<button id="submit" class="but">Login</button><br></br>
     
-OR<br></br>
+<p>OR</p><br></br>
 
     <form action="landing.html">
-        Create a new administrator profile <a href="usersignup.html">here</a>
+        <p>Create a new administrator profile <a href="usersignup.html">here</a></p>
 </form>   
-<button id="logout"> LOGOUT </button><br></br>
+<button id="logout" class="but">Log out</button><br></br>
 
 
 <script>

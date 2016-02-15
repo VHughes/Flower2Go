@@ -9,8 +9,18 @@
 
 <body>
 <button id = "SinglesBut" class = "but">Singles</button></br>
+    <div id= 'SinglesDiv' style="display:none;"/>
+    <p>Singles pics!</p>
+    </div>
 <button id = "BouquetsBut" class = "but">Bouquets</button></br>
+    <div id= 'BouquetsDiv' style="display:none;"/>
+    <p>Bouquet pics!</p>
+    </div>
 <button id = "EventsBut" class = "but">Events</button>
+    <div id= 'EventsDiv' style="display:none;"/>
+    <p>Events pics!</p>
+    </div>
+    
 
 <script>
 $(document).ready(function(){
@@ -33,8 +43,20 @@ $(document).ready(function(){
                             
                                 } 
     
-            
-          });
+                    });
+    
+                    $("#SinglesBut").click(function(){
+				    $("#SinglesDiv").toggle(200);
+		      });
+		
+                    $("#BouquetsBut").click(function(){
+				    $("#BouquetsDiv").toggle(200);
+		      });
+		
+                    $("#EventsBut").click(function(){
+				    $("#EventsDiv").toggle(200);
+
+		      });
         
     });
 
