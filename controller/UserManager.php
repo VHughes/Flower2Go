@@ -27,15 +27,16 @@ class UserManager {
 
     public function findUser($usr = "", $pwd = "") {
         $params = array(":usr" => $usr, ":pwd" => $pwd);
-        $sql = "SELECT * FROM users WHERE username = :usr AND password = :pwd";
-
-        $rows = $this->db->query($sql, $params);
+        $encrypt_pass = md5($pwd);
+        $sql = "SELECT * FROM users WHERE username = :usr AND password = '$encrypt_pass'";
+        $rows = $this->db->query($sql, $params, $encrypt_pass);
         if(count($rows) > 0) {
             return $rows[0];
         }
-
-        return null;
+        
+         return null;
     }
+    
     
      public function listUsers() {
         $sql = "SELECT username, firstname, lastname FROM users";

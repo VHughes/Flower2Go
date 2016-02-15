@@ -22,14 +22,18 @@ class UserLoginAction {
     public function login() {
 
         if(Session::get('isLoggedIn')) {
+            
             Messages::addMessage("info", "You are already logged in.");
+            
             return $this;
+            
         } else {
             $response = array();
 
             // params have to be there
-            $user_name = $this->params->getValue('username');
-            $user_password = $this->params->getValue('password');
+    
+        
+            
             if($user_name != null && $user_password != null) {
                 // check if user name and password are correct
                 $usr = $this->userManager->findUser($user_name, $user_password);
@@ -40,6 +44,7 @@ class UserLoginAction {
                     Session::set("isLoggedIn", true);
                     return $usr;
                     return $usr['ID'];
+                    
 
                 } else {
                     Messages::addMessage("info", "Log in user and/or password incorrect.");
