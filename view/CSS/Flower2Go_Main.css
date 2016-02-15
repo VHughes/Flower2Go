@@ -15,7 +15,7 @@ p {
 
 .but {
 	background-color:#ad7cb0;
-	/*border-radius: 10px;*/
+	border-radius: 10px;
 	width: 75%;
 	height: 60px;
 	margin-bottom: 7px;
@@ -24,6 +24,7 @@ p {
 	color:#ffffff;
 }
 
+<<<<<<< HEAD
 #submit {
     background-color: #b36d87;
     width: 75%;
@@ -60,6 +61,8 @@ p {
 		font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
 }
 
+=======
+>>>>>>> origin/master
 #SinglesDiv {
 	background-color:#44D5F0;
 	border-radius: 10px;
@@ -98,6 +101,42 @@ p {
 
 #SinglesBut {
 	margin-top:100px;	
+}
+
+#submitLogin {
+	background-color:#ad7cb0;
+	/*border-radius: 10px;*/
+	width: 75%;
+	height: 30px;
+	margin-bottom: 7px;
+	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	color:#ffffff;	
+}
+
+#userP {
+	margin-bottom:-5px;	
+}
+
+#here {
+	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
+}
+
+#newAdmin {
+	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
+}
+
+#shop {
+	/*background-color:#C76E8c;*/
+	background-color:#685f9c;
+	/*background-color:#31A772;*/
+	/*border-radius: 10px;*/
+	width: 75%;
+	height: 60px;
+	margin-bottom: -7px;
+	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	color:#ffffff;	
 }
 
 #footerText {
