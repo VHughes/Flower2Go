@@ -83,6 +83,13 @@ span {
     width: 70%;
     height: auto; 
     border:1px solid black;
+    position: fixed;
+    width: 80%;
+    height: 210px;
+    margin-left: 15%;
+    margin-right: 15%;
+    
+    
 }
 
 #BouquetsDiv {
@@ -109,37 +116,71 @@ span {
 	margin-bottom:6px;*/
 }
 
-.SBox1 div.overlay {
+
+.SBox1 button.overlay {
     display:none;
 }
 
 
-.SBox1:hover div.overlay {
+.SBox1:hover button.overlay {
     display:block;
     
 }
 
-.pic:hover {
+.SBox1:hover .pic {
  opacity: 0.3; filter: alpha(opacity=30);   
 }
 
-#SinglesDiv .SBox1 {
+/*#SinglesDiv .SBox1 {
     text-align: center;
     position: relative;
     float: left;
     clear:right;
-    padding: 5px;
+    padding: 2px;
     width: 200px;
     height:200px;
     
+}*/
+
+.imageContainer{
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.imageContainer > div.SBox1 {
+    display: inline-block;
+    text-align: center;
+    position: relative;
 }
 
 .SBox1 #AddToCart {
     /*position: fixed;
     margin-left: -50%;
     margin-top: 80%;*/
-    width: 150px;
     position: absolute;
+    width: 50%;
+    height: 25px;
+    margin-left: 25%;
+    margin-top: 84%;
+    z-index: 99;
+    background-color: #cbcbcb;
+    color: white;
+    border-radius: 10px;
+    border:1.5px;
+    border-style: solid;
+    border-color: #ffffff;
+
+}
+
+.SBox1 #Title {
+    /*position: fixed;
+    margin-left: -50%;
+    margin-top: 80%;*/
+    position: absolute;
+    margin-left: 25%;
+    margin-top: 24%;
+    z-index: 98;
 
 }
 
