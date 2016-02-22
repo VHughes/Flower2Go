@@ -25,12 +25,10 @@
         document.getElementById("sub").onclick = function(){
         
             $.ajax({
-               url:"../controller/users.php",
+               url:"../controller/register.php",
                dataType: "html",
                type: "POST",
                data:{
-                   method: "post",
-                   action: "add",
                    username: document.getElementById("username").value,
                    password: document.getElementById("password").value,
                    firstname: document.getElementById("firstname").value,

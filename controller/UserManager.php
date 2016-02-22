@@ -25,16 +25,16 @@ class UserManager {
         return null;
     }
 
-    public function findUser($usr = "", $pwd = "") {
+    public function findUser($usr, $pwd) {
         $params = array(":usr" => $usr, ":pwd" => $pwd);
-        $encrypt_pass = md5($pwd);
-        $sql = "SELECT * FROM users WHERE username = :usr AND password = '$encrypt_pass'";
-        $rows = $this->db->query($sql, $params, $encrypt_pass);
+        $sql = "SELECT * FROM users WHERE username = :usr AND password = :pwd";
+
+        $rows = $this->db->query($sql, $params);
         if(count($rows) > 0) {
             return $rows[0];
         }
-        
-         return null;
+
+        return null;
     }
     
     
@@ -45,12 +45,21 @@ class UserManager {
     }
 
     
-    public function addUser($firstName, $lastName, $userName) {
-
-        $sql = "INSERT INTO users (firstname, lastname, username)
-            VALUES ('$firstName', '$lastName', '$userName',)";
-        $affectedRows = $this->db->affectRows($sql);
-        return $affectedRows;
+    public function addUser($fname, $lname, $usr, $pwd, $email) {
+        //$params = array(":fname" => $fname, ":lname" => $lname, ":usr" => $usr, ":pwd" => $pwd, ":email" => $email);
+        $sql = "INSERT INTO users (firstname, lastname, username, password, email)
+            VALUES ('$fname', '$lname', '$usr', '$pwd', '$email')";
+        //echo $sql;
+        $rows = $this->db->query($sql);
+        return $rows;
+        
+        
+        
+        //$affectedRows = $this->db->affectRows($sql);
+        //$rows = $this->db->query($sql, $params);
+       // return $affectedRows;
+       // return $rows;
+       // return $rows;
     }
 
 }

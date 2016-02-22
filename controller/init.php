@@ -11,6 +11,7 @@ require_once('ShowUserProfileAction.php');
 require_once('UserLoginAction.php');
 require_once('UserLogoutAction.php');
 require_once('Utils.php');
+require_once('NewUserAction.php');
 require_once('../model/DBConnector.php');
 
     

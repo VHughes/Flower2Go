@@ -6,7 +6,7 @@ require_once('Messages.php');
 require_once('Utils.php');
 
 // Command
-class UserLoginAction {
+class NewUserAction {
 
     private $userManager;
     private $params;
@@ -19,7 +19,7 @@ class UserLoginAction {
         $this->params = $params;
     }
 
-    public function login() {
+    public function register() {
 
         if(Session::get('isLoggedIn')) {
             
@@ -28,28 +28,33 @@ class UserLoginAction {
             return $this;
             
         } else {
-            $response = array();
+             $response = array();
 
             // params have to be there
-            $user_name = $this->params->getValue('user_name');
-            $user_password = $this->params->getValue('password');
-            if($user_name != null && $user_password != null) {
+            $usr = $this->params->getValue('username');
+            $pwd = $this->params->getValue('password');
+            $fname = $this->params->getValue('firstname');
+            $lname = $this->params->getValue('lastname');
+            $email = $this->params->getValue('email');
+            if($usr != null && $pwd != null && $fname != null && $lname != null && $email != null) {
                 // check if user name and password are correct
-                $usr = $this->userManager->findUser($user_name, $user_password);
+                $user = $this->userManager->addUser($fname, $lname, $usr, $pwd, $email);
       
-                if($usr != null) {
+                if($user != null) {
                     // log user in
-                    Session::set("username", $usr['username']);
-                    Session::set("id", $usr['ID']);
+                    Session::set("username", $user['username']);
+                    Session::set("id", $user['ID']);
                     Session::set("isLoggedIn", true);
-                    return $usr;
-                    return $usr['ID'];
+                    return $user;
+                    return $user['ID'];
                     
 
-                } else {
+            } else{
                     Messages::addMessage("info", "Log in user and/or password incorrect.");
                     return null;
+            
                 }
+                
             } else {
                 Messages::addMessage("warning", "'user_name' and/or 'password' parameters missing.");
                 return null;
@@ -61,5 +66,6 @@ class UserLoginAction {
 
 
 }
+   
 
 ?>

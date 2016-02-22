@@ -20,7 +20,7 @@ span {
 .but {
 	background-color:#ad7cb0;
 	border-radius: 10px;
-	width: 75%;
+	width: 40%;
 	height: 60px;
 	margin-bottom: 7px;
 	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
@@ -41,8 +41,8 @@ span {
 
 #logout {
     background-color: #8f7ec0;
-    width: 75%;
-	height: 30px;
+    width: 30%;
+	height: 40px;
 	margin-bottom: 7px;
 	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
 	font-size: 12px;
@@ -51,7 +51,7 @@ span {
 
 .loginInputs {
 	/*border-radius: 10px;*/
-	width: 75%;
+	width: 40%;
 	height: 30px;
 	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
 	font-size: 12px;
@@ -213,7 +213,7 @@ span {
 	background-color:#685f9c;
 	/*background-color:#31A772;*/
 	/*border-radius: 10px;*/
-	width: 75%;
+	width: 40%;
 	height: 60px;
 	margin-bottom: -7px;
 	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
