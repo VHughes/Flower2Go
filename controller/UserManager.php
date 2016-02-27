@@ -15,8 +15,7 @@ class UserManager {
 
     public function getUserProfile($userName = "") {
 
-        $rows = $this->db->query("select * from user where user_name = :name",
-            array(':name' => $userName));
+        $rows = $this->db->query("select * from users where username = :name", array(':name' => $userName));
         //var_dump($rows[0]);
         if(count($rows) == 1) {
             return $rows[0];
@@ -32,8 +31,10 @@ class UserManager {
         $rows = $this->db->query($sql, $params);
         if(count($rows) > 0) {
             return $rows[0];
+            return $rows;
+            return $sql;
         }
-
+        
         return null;
     }
     

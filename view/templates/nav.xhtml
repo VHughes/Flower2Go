@@ -1,34 +1,45 @@
 <!-- View Fragment -->
 
 <nav id="nav" role="navigation" metal:define-macro="nav_bar">
-
+<form>
     <link href="CSS/Flower2Go_Main.css" rel="stylesheet" type="text/css"/>
     
     <img id="logo" src="ASSETS/Flower2Go_Logo2.png" height="200px" width="180px"/><br></br><br></br>
-<button id="shop" class="but">Shop Now!</button><br></br>
+    <button id="shop" class="but">Shop Now!</button>
 
-<br></br><br></br><span>OR</span><br></br>
+    <br></br><br></br><span>OR</span><br></br>
 
-<br></br><span>Login as Admin</span> <br></br><br></br>
-<input type="text" placeholder="Admin Username" id="username" class="loginInputs"/><br></br>
-
-<input type="text" placeholder="Admin Password" id="password" class="loginInputs"/><br></br>
-<button id="submit" class="but">Login</button><br></br>
+    <br></br><span>Login as Admin</span> <br></br><br></br>
 
 
-    <form action="landing.html">
-        <p>Create a new administrator profile <a href="usersignup.html">here</a></p><br></br>
-</form>   
-<button id="logout" class="but">Log out</button><br></br>
 
+    <input type="text" placeholder="Admin Username" id="username" class="loginInputs" /><br></br>
+    <input type="text" placeholder="Admin Password" id="password" class="loginInputs"  /><br></br>
+ <!-- figure out why the login button has a hover, but the others dont -->
+    <button id="submit" class="but">Login</button>
+    <button id="logout" class="but">Log out</button><br></br>
+    <p>Create a new administrator profile <a href="usersignup.html">here</a></p>
 
+</form>
 <script>
 
     $(document).ready(function(){
-        
+    /*    
         var user_id= "";
         document.getElementById("submit").onclick = function(){
-        //alert("DINOSAUR");
+         /*
+            var x = document.getElementById("username").value;
+            var y = document.getElementById("password").value;
+            if (x == null || x == "") {
+                alert("Name must be filled out");
+                return false;
+            } else if(y == null || y == ""){
+                alert("Please enter a password");
+                return false;
+            } else {
+                alert("Welcome!");
+            }
+            //alert("DINOSAUR");
                         $.ajax({
                             url: "../controller/login.php",
                             type: "POST",
@@ -42,7 +53,7 @@
                                 alert("heyoOOO");
                                 console.log(resp2);
                                 console.log(username);
-                 
+                                location.href = "Main_Page.html";
                         }
                   });
 

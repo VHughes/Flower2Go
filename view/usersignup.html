@@ -5,26 +5,98 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link href="CSS/Sign_Up.css" rel="stylesheet" type="text/css">
 	<link href="CSS/Flower2Go_Main.css" rel="stylesheet" type="text/css">
+    
 </head>    
 <body>
-    <p>Sign Up as a New Admin Here</p> <br>
-<input type="text" class="loginInputs" placeholder="First Name" id="firstname"><br>
-<input type="text" class="loginInputs" placeholder="Last Name" id="lastname"><br>
-<input type="text" class="loginInputs" placeholder="Username" id="username"><br>
-<input type="text" class="loginInputs" placeholder="Email" id="email"><br>
-<input type="text" class="loginInputs" placeholder="Password" id="password"><br>
-     
-<button id="sub" class="but">GO!</button><br></br>
-
+<form>
+<p>Sign Up as a New Admin Here</p> <br>
+<div class="field">
+<input type="text"  placeholder="First Name" id="firstname"><br><i></i>
+</div>
+<div class="field">
+<input type="text"  placeholder="Last Name" id="lastname"><br><i></i>
+</div>
+<div class="field">
+<input type="text"  placeholder="Username" id="username"><br><i></i>
+</div>
+<div class="field">
+<input type="text"  placeholder="Email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br><i></i>
+</div>
+<div class="field">
+<input type="text"  placeholder="Password" id="password"><br><i></i>
+</div>
+<button data-error="Oops!, Something is wrong" data-success='Success, message sent'>Submit</button>
+</form>
+   
+    <!--
+    	<form>
+      <h1>3D Form Validation</h1>
+			<div class="field">
+				<input id="name" type="text" placeholder="Name">
+				<i></i>
+			</div>
+			<div class="field">
+				<input  id='email' type="email" placeholder="Email">
+				<i></i>
+			</div>
+			<textarea id='msg' placeholder="Message"></textarea>
+			<button data-error="Oops!, Something is wrong" data-success='Success, message sent'>Submit</button>
+		</form>
+-->
+    
+    
+    
+    
     
 </body>    
     
 <script>
     $(document).ready(function(){
        
-        document.getElementById("sub").onclick = function(){
+        //document.getElementById("sub").onclick = function(){
         
-            $.ajax({
+            $(function(){
+			var fname = $("#firstname");
+			var lname = $("#lastname");
+            var uname = $("#username");
+            var email = $("#email");
+            var pass = $("#password");
+
+			function validate(field){
+				if(field.val().length === 0){
+					field.removeClass().addClass("error");
+					field.next().removeClass().addClass("icon-warning-sign");
+				}else{
+					field.removeClass().addClass("success");
+					field.next().removeClass().addClass("icon-ok");
+				}
+				return field;
+			}
+
+			$('input').blur(function(){
+				validate($(this));
+			});
+
+			$("button").on("click" , function(){
+				validate(fname);
+				validate(lname);
+                validate(uname);
+                validate(email);
+                validate(pass);
+            
+				if($(fname).val().length === 0 || $(lname).val().length === 0 || $(uname).val().length === 0 || $(email).val().length === 0 || $(pass).val().length === 0)
+					$(this).removeClass().addClass("submit-error");
+				else{
+					$(this).removeClass().addClass("submit-success");
+				}
+				window.setTimeout(function(){
+					console.log("done");
+					$("button").removeClass();
+				}, 3000)
+				return false;
+                
+                
+                 $.ajax({
                url:"../controller/register.php",
                dataType: "html",
                type: "POST",
@@ -38,12 +110,19 @@
                 success: function(resp){
                     alert ("hi");
                     console.log(resp);
+                    
                 }
                 
             });
+                
+                
+			});
+			
+		});
         
-        }
-        
+           
+     
+    
         
     });
     
