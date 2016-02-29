@@ -8,6 +8,7 @@
 </head>
 
 <body>
+<div class="form">
 <button id = "SinglesBut" class = "but">Singles</button></br>
     
     
@@ -31,23 +32,23 @@
     
 
 <button id = "BouquetsBut" class = "but">Bouquets</button></br>
-    <div id= 'BouquetsDiv' style="display:none;"/>
-        <span id="BBox1"><img id="Bouquet1" class="pic"src="ASSETS/MockItems/Bouquet1.jpg" height="200px" width="200px"/></span>
-        <span id="BBox2"><img id="Bouquet2" class="pic"src="ASSETS/MockItems/Bouquet2.jpg" height="200px" width="200px"/></span>
-        <span id="BBox3"><img id="Bouquet3" class="pic"src="ASSETS/MockItems/Bouquet3.jpg" height="200px" width="200px"/></span>
+    <div id= 'BouquetsDiv' style="display:none;">
+        <span id="BBox1"><img id="Bouquet1" class="pic" src="ASSETS/MockItems/Bouquet1.jpg" height="200px" width="200px"/></span>
+        <span id="BBox2"><img id="Bouquet2" class="pic" src="ASSETS/MockItems/Bouquet2.jpg" height="200px" width="200px"/></span>
+        <span id="BBox3"><img id="Bouquet3" class="pic" src="ASSETS/MockItems/Bouquet3.jpg" height="200px" width="200px"/></span>
     </div>
 <button id = "EventsBut" class = "but">Events</button>
     <div id= 'EventsDiv' style="display:none;"/>
         <span id="EBox1"><img id="Event1" class="pic" src="ASSETS/MockItems/Event1.jpg" height="200px" width="200px"/></span>
-        <span id="EBox2"><img id="Event2" class="pic"src="ASSETS/MockItems/Event2.jpg" height="200px" width="200px"/></span>
-        <span id="EBox3"><img id="Event3" class="pic"src="ASSETS/MockItems/Event3.jpg" height="200px" width="200px"/></span>
+        <span id="EBox2"><img id="Event2" class="pic" src="ASSETS/MockItems/Event2.jpg" height="200px" width="200px"/></span>
+        <span id="EBox3"><img id="Event3" class="pic" src="ASSETS/MockItems/Event3.jpg" height="200px" width="200px"/></span>
     </div>
-    
+</div>  
 
 <script>
 $(document).ready(function(){
     
-   
+   /*
                         $.ajax({
                             url: "../controller/exist_user.php",
                             type: "POST",
@@ -58,15 +59,17 @@ $(document).ready(function(){
                             },
                             success: function(resp){
                                 console.log(resp);
+                                var form = document.getElementsByName("form");
+                                document.body.appendChild(form);
                                 var h3 = document.createElement("h3");
-                                document.body.appendChild(h3);
+                                form.appendChild(h3);
                                 h3.innerHTML = resp.username;
                                 console.log(resp.username);
                             
                                 } 
     
                     });
-    
+    */
                     $("#SinglesBut").click(function(){
 				    $("#SinglesDiv").toggle(200);
 		      });

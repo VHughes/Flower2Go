@@ -112,6 +112,11 @@ form{
 	width: 500px;
 	margin: 0 auto;
 }
+
+.form {
+	width: 50%;
+	margin: 0 auto;
+}
 input, button, textarea{
 	position: relative;
 	-webkit-apprearance:none;
@@ -272,11 +277,10 @@ input[type=text]:invalid {
     width: 75%;
 	height: auto;
     */
-    width: 70%;
+    width: 90%;
     height: auto; 
     border:1px solid black;
     position: fixed;
-    width: 80%;
     height: 210px;
     margin-left: 15%;
     margin-right: 15%;
@@ -337,7 +341,7 @@ input[type=text]:invalid {
 .imageContainer{
     margin-left: auto;
     margin-right: auto;
-    
+    width: 100%;
 }
 
 .imageContainer > div.SBox1 {
