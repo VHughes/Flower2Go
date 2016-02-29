@@ -17,6 +17,10 @@ span {
 
 .but {
 	border-radius: 10px;
+<<<<<<< HEAD
+=======
+	width: 75%;
+>>>>>>> origin/master
 	height: 60px;
 	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
 	font-size: 16px;
@@ -38,14 +42,27 @@ button.shop:hover{
 
 #logout {
     background-color: #8f7ec0;
+<<<<<<< HEAD
    
 	
 	
+=======
+    width: 75%;
+	height: 40px;
+	margin-bottom: 7px;
+	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	color:#ffffff;
+>>>>>>> origin/master
 }
 
 .loginInputs {
 	/*border-radius: 10px;*/
+<<<<<<< HEAD
 
+=======
+	width: 75%;
+>>>>>>> origin/master
 	height: 30px;
 	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
 	font-size: 12px;
@@ -385,6 +402,18 @@ input[type=text]:invalid {
 
 #shop {
 	background-color:#685f9c;
+<<<<<<< HEAD
+=======
+	/*background-color:#31A772;*/
+	/*border-radius: 10px;*/
+	width: 75%;
+	height: 60px;
+	margin-bottom: -7px;
+	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	color:#ffffff;	
+}
+>>>>>>> origin/master
 
 }
 #footerText {
