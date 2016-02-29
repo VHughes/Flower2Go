@@ -39,9 +39,12 @@ button.shop:hover{
 
 	
 }
-
+/* //// THIS IS THE BUTTON'S ORIGINAL COLOUR ///
 #logout {
     background-color: #8f7ec0;
+}
+*/
+/*
 <<<<<<< HEAD
    
 	
@@ -57,7 +60,7 @@ button.shop:hover{
 }
 
 .loginInputs {
-	/*border-radius: 10px;*/
+	/*border-radius: 10px;
 <<<<<<< HEAD
 
 =======
@@ -67,6 +70,7 @@ button.shop:hover{
 	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
 	font-size: 12px;
 }
+*/
 
 #password {
 	margin-bottom: 10px;
