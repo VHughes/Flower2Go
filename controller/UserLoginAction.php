@@ -40,10 +40,10 @@ class UserLoginAction {
                 if($usr != null) {
                     // log user in
                     Session::set("username", $usr['username']);
-                    Session::set("id", $usr['ID']);
+                    Session::set("id", $usr['id']);
                     Session::set("isLoggedIn", true);
                     return $usr;
-                    return $usr['ID'];
+                    return $usr['id'];
                     
 
                 } else {

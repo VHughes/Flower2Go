@@ -21,13 +21,14 @@
     <p>Create a new administrator profile <a href="usersignup.html">here</a></p>
 
 </form>
+
 <script>
 
     $(document).ready(function(){
-    /*    
+     
         var user_id= "";
-        document.getElementById("submit").onclick = function(){
-         /*
+        document.getElementById("submit").onclick = function(e){
+/*
             var x = document.getElementById("username").value;
             var y = document.getElementById("password").value;
             if (x == null || x == "") {
@@ -39,11 +40,13 @@
             } else {
                 alert("Welcome!");
             }
+            
+            */
             //alert("DINOSAUR");
                         $.ajax({
                             url: "../controller/login.php",
                             type: "POST",
-                            dataType: "html",
+                            dataType: "json",
                             data: {
                                 method: "post",
                                 username: document.getElementById("username").value,
@@ -53,14 +56,15 @@
                                 alert("heyoOOO");
                                 console.log(resp2);
                                 console.log(username);
-                                location.href = "Main_Page.html";
+                                alert(resp2);
+                                //location.href = "Main_Page.html";
                         }
                   });
-
+                e.preventDefault();
                 }
         
         
-                document.getElementById("logout").onclick = function(){
+                document.getElementById("logout").onclick = function(e){
                             $.ajax({
                             url: "../controller/logout.php",
                             type: "POST",
@@ -72,10 +76,13 @@
                             },
                             success: function(resp2){
                                 alert("loggggggged oUT");
+                                alert(resp2);
                                 console.log(resp2);
                  
                         }
                   });
+                    
+                    e.preventDefault();
 
                 }
         

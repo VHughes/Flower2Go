@@ -51,8 +51,9 @@ class UserManager {
         $sql = "INSERT INTO users (firstname, lastname, username, password, email)
             VALUES ('$fname', '$lname', '$usr', '$pwd', '$email')";
         //echo $sql;
-        $rows = $this->db->query($sql);
+        $rows = $this->db->affectRows($sql);
         return $rows;
+        return $sql;
         
         
         

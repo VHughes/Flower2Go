@@ -21,7 +21,7 @@ loadScripts();
 
             if($response) {
 
-                $data = array("status" => "success", "user" => $response);
+                $data = array("status" => "success", "user" => $response, "msgs" => Messages::getMessages());
 
             } else {
                 // error message

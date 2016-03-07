@@ -33,9 +33,11 @@ class NewUserAction {
             // params have to be there
             $usr = $this->params->getValue('username');
             $pwd = $this->params->getValue('password');
+            $encrypt = md5($pwd);
             $fname = $this->params->getValue('firstname');
             $lname = $this->params->getValue('lastname');
             $email = $this->params->getValue('email');
+            echo $usr . " " . $pwd . " " . $fname . " " . $lname . " " . $email;
             if($usr != null && $pwd != null && $fname != null && $lname != null && $email != null) {
                 // check if user name and password are correct
                 $user = $this->userManager->addUser($fname, $lname, $usr, $pwd, $email);
@@ -47,6 +49,8 @@ class NewUserAction {
                     Session::set("isLoggedIn", true);
                     return $user;
                     return $user['ID'];
+                    return $encrypt;
+                    //return $response;
                     
 
             } else{

@@ -25,7 +25,7 @@
 <div class="field">
 <input type="text"  placeholder="Password" id="password"><br><i></i>
 </div>
-<button data-error="Oops!, Something is wrong" data-success='Success, message sent'>Submit</button>
+<button id="button" data-error="Oops!, Something is wrong" data-success='Success, message sent'>Submit</button>
 </form>
    
     <!--
@@ -77,26 +77,22 @@
 				validate($(this));
 			});
 
-			$("button").on("click" , function(){
+			$("#button").on("click" , function(){
+                
 				validate(fname);
 				validate(lname);
                 validate(uname);
                 validate(email);
                 validate(pass);
             
-				if($(fname).val().length === 0 || $(lname).val().length === 0 || $(uname).val().length === 0 || $(email).val().length === 0 || $(pass).val().length === 0)
+				if($(fname).val().length === 0 || $(lname).val().length === 0 || $(uname).val().length === 0 || $(email).val().length === 0 || $(pass).val().length === 0){
 					$(this).removeClass().addClass("submit-error");
-				else{
+                }else{
 					$(this).removeClass().addClass("submit-success");
 				}
-				window.setTimeout(function(){
-					console.log("done");
-					$("button").removeClass();
-				}, 3000)
-				return false;
                 
                 
-                 $.ajax({
+                $.ajax({
                url:"../controller/register.php",
                dataType: "html",
                type: "POST",
@@ -114,6 +110,17 @@
                 }
                 
             });
+                
+                
+                
+                
+				window.setTimeout(function(){
+					console.log("done");
+					$("button").removeClass();
+				}, 3000)
+				return false;
+                
+            
                 
                 
 			});
