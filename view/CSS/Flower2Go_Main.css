@@ -7,7 +7,7 @@ body{
 
 
 
-p {
+p, h2 {
 	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
 }
 
@@ -134,6 +134,11 @@ input, button, textarea{
 	-o-transition:background-color .3s, border-color .4s;
 	transition:background-color .3s, border-color .4s;
 }
+
+.BuyNow{
+ background-color:#6c9274;   
+}
+
 textarea{
 	height: 100px;
 	resize:none;
