@@ -39,12 +39,9 @@ button.shop:hover{
 
 	
 }
-/* //// THIS IS THE BUTTON'S ORIGINAL COLOUR ///
+
 #logout {
     background-color: #8f7ec0;
-}
-*/
-/*
 <<<<<<< HEAD
    
 	
@@ -60,7 +57,7 @@ button.shop:hover{
 }
 
 .loginInputs {
-	/*border-radius: 10px;
+	/*border-radius: 10px;*/
 <<<<<<< HEAD
 
 =======
@@ -70,7 +67,6 @@ button.shop:hover{
 	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
 	font-size: 12px;
 }
-*/
 
 #password {
 	margin-bottom: 10px;
@@ -268,6 +264,23 @@ input[type=text]:invalid {
 
 =======
 >>>>>>> origin/master
+
+/*#ShoppingCartBut{
+    position:absolute;
+    margin-left: 10px;
+}
+
+#ProfileBut{
+    position:absolute;
+    margin-left: 10px;
+}
+
+#Welcome{
+    margin-top: -25px;
+    font-size: 10pt;
+    font-color:"#9b729e";
+}*/
+
 #SinglesDiv {
 	/*background-color:#44D5F0;
 	border-radius: 10px;

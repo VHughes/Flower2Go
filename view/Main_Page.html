@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -8,6 +8,11 @@
 </head>
 
 <body>
+    
+    <span id="Welcome">Welcome <b>Arron_Ferguson</b></span>
+    <img onclick="location.href = 'shoppingcart.html';" id="ShoppingCartBut" src="ASSETS/ShoppingCartIcon.png" height="40px" width="45px"/>
+    <img onclick="location.href = 'adminprofile.html';" id="ProfileBut" src="ASSETS/ProfileIcon.png" height="40px" width="45px"/><br></br>
+    
 <div class="form">
 <button id = "SinglesBut" class = "but">Singles</button></br>
     
@@ -70,6 +75,14 @@ $(document).ready(function(){
     
                     });
     */
+            /*$("#ShoppingCartBut").click(function(){
+            
+            });
+    
+            $("#ProfileBut").click(function(){
+                
+            });*/
+    
                     $("#SinglesBut").click(function(){
 				    $("#SinglesDiv").toggle(200);
 		      });
