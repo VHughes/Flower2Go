@@ -28,20 +28,20 @@
            <!-- <button class="overlay" id="AddToCart">Add to cart</button>-->
         
         <img id="Single1" class="pic" src="ASSETS/MockItems/Single1.jpg" height="200px" width="200px"/>
-        <button class="BuyNow">Add to Cart</button>
+        <button class="BuyNow" id="singlebut">Add to Cart</button>
         </div>
         
         <div class="SBox1">
             <p class="overlay" id="Title1"><b>Blue Rose</b></p>
             <h2>$6.99</h2>
             <img id="Single2" class="pic" src="ASSETS/MockItems/Single2.jpg" height="200px" width="200px"/>
-        <button class="BuyNow">Add to Cart</button>
+        <button class="BuyNow" id="singlebut2" >Add to Cart</button>
         </div>
         
         <div class="SBox1">
             <p class="overlay" id="Title1"><b>Daffodil</b></p>
             <h2>$2.99</h2>
-            <img id="Single3" class="pic" src="ASSETS/MockItems/Single3.jpg" height="200px" width="200px"/><button class="BuyNow">Add to Cart</button>
+            <img id="Single3" class="pic" src="ASSETS/MockItems/Single3.jpg" height="200px" width="200px"/><button class="BuyNow" id="singlebut3">Add to Cart</button>
         </div>
         <br></br>
         </div>
@@ -66,6 +66,21 @@
 
 <script>
 $(document).ready(function(){
+    
+    
+    var sinlge1 = document.getElementById("singlbut");
+    single1.onclick = function(){
+        $.ajax({
+            url: "../controller/addToCart.php",
+            type: "POST",
+            dataType: "html",
+            data: {
+                method: "login_user",
+                
+            },
+            success: function(resp){
+    }
+    
     
    /*
                         $.ajax({

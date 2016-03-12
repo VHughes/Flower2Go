@@ -1,24 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-  <!-- View -->
-  <headReplace metal:use-macro="/templating/head.xhtml/meta_head">
-  </headReplace>
+class Product {
+    private $productName, $cost, $quantity;
 
-  <body>
+    function __construct ($name, $cst, $qty) {
+        $this->productName = $name;
+        $this->cost = $cst;
+        $this->quantity = $qty;
+         
+    }
+    
+    public function getPName(){
+        echo $this->productName;
+    }
+    
+    public function getPCost(){
+        echo $this->cost;
+    }
+    
+    public function getPQuantity(){
+        echo $this->quantity;
+    }
 
+    public function toHTML(){
+    print_r ($this);
+    }
+    
+}
 
-    <navReplace metal:use-macro="./templating/nav.xhtml/nav_bar">
-    </navReplace>
-
-
-
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="./js/main.js"></script>
-
-    <footerReplace metal:use-macro="/templating/footer.xhtml/page_footer">
-    </footerReplace>
-
-  </body>
-</html>
+$new_product = new Product(10, 20, 30);
+echo $new_product->getPName();
+echo $new_product->getPCost();
+echo $new_product->getPQuantity();
+?>

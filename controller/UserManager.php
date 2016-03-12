@@ -13,9 +13,11 @@ class UserManager {
         $this->db = DBConnector::getInstance();
     }
 
-    public function getUserProfile($userName = "") {
-
-        $rows = $this->db->query("select * from users where username = :name", array(':name' => $userName));
+    public function getUserProfile($name) {
+        $params = array(":name" => $name);
+        $sql = "SELECT * FROM users WHERE username = :name";
+        $rows = $this->db->query($sql, $params);
+           
         //var_dump($rows[0]);
         if(count($rows) == 1) {
             return $rows[0];
@@ -25,14 +27,21 @@ class UserManager {
     }
 
     public function findUser($usr, $pwd) {
+        
         $params = array(":usr" => $usr, ":pwd" => $pwd);
+        
+        //return $params;
+        
         $sql = "SELECT * FROM users WHERE username = :usr AND password = :pwd";
 
         $rows = $this->db->query($sql, $params);
         if(count($rows) > 0) {
             return $rows[0];
-            return $rows;
-            return $sql;
+            
+            //return $sql;
+            //echo $sql;
+            //echo $rows;
+            
         }
         
         return null;
@@ -46,14 +55,14 @@ class UserManager {
     }
 
     
-    public function addUser($fname, $lname, $usr, $pwd, $email) {
+    public function addUser($fname, $lname, $usr, $encrypt, $email) {
         //$params = array(":fname" => $fname, ":lname" => $lname, ":usr" => $usr, ":pwd" => $pwd, ":email" => $email);
         $sql = "INSERT INTO users (firstname, lastname, username, password, email)
-            VALUES ('$fname', '$lname', '$usr', '$pwd', '$email')";
+            VALUES ('$fname', '$lname', '$usr', '$encrypt', '$email')";
         //echo $sql;
         $rows = $this->db->affectRows($sql);
         return $rows;
-        return $sql;
+        //return $sql;
         
         
         

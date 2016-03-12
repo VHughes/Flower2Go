@@ -33,6 +33,7 @@ class Parameters {
 
     public function values() {
         return $this->values;
+        
     }
 
     public function valuesAsString($delimiter = " ") {

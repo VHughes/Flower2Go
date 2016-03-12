@@ -25,9 +25,12 @@
 <script>
 
     $(document).ready(function(){
-     
+        var id = "";
         var user_id= "";
-        document.getElementById("submit").onclick = function(e){
+        //document.getElementById("submit").onclick = function(e){
+        $("#submit").click(function(e){
+            e.preventDefault();
+            console.log('hi');
 /*
             var x = document.getElementById("username").value;
             var y = document.getElementById("password").value;
@@ -46,25 +49,53 @@
                         $.ajax({
                             url: "../controller/login.php",
                             type: "POST",
-                            dataType: "json",
+                            dataType: "html",
                             data: {
-                                method: "post",
+                                //method: "post",
                                 username: document.getElementById("username").value,
                                 password: document.getElementById("password").value,
                             },
                             success: function(resp2){
-                                alert("heyoOOO");
+                                //alert("heyoOOO");
+                                //console.log(resp2.user.username);
                                 console.log(resp2);
-                                console.log(username);
-                                alert(resp2);
+                                console.log(resp2['user']);
+                                console.log(resp2.username);
+                                console.log(resp2['username']);
+                                console.log(this.username);
+                                console.log(resp2.user);
+                                console.log(this.user);
+                                console.log(resp2.username);
+                                console.log(resp2[username]);
+                                
+                                //var user = resp2.user;
+                               
+                                //console.log(resp2.name);
+                               // console.log(resp2['user']);
+                                //var resp = sessionStorage.setItem("resp", resp2);
+                                //console.log(resp);
+                             //   console.log(resp2['username']);
+                               //console.log(resp2['user']);
+                               /* if(resp2['username'] != null && resp2['password'] != null) {
+                                sessionStorage.setItem("name", resp2['username']);
+                                sessionStorage.setItem("pass", resp2['password']);
+                                
+                                         } else {
+                                         }*/
+                                //id = resp2;
+                                //sessionStorage.setItem("id", this.id);
+                               
+    
+                                //location.href = "profile.html"
                                 //location.href = "Main_Page.html";
                         }
                   });
-                e.preventDefault();
-                }
+                
+                });
         
         
                 document.getElementById("logout").onclick = function(e){
+                    console.log('logging out');
                             $.ajax({
                             url: "../controller/logout.php",
                             type: "POST",
@@ -77,7 +108,7 @@
                             success: function(resp2){
                                 alert("loggggggged oUT");
                                 alert(resp2);
-                                console.log(resp2);
+                                console.log(resp2, 'log out');
                  
                         }
                   });

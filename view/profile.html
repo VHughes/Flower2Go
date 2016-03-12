@@ -10,10 +10,45 @@
 <body>
     
 <h2>Username</h2><br>
-<h5>FirstName LastName</h5><br>
-<span><b>Email address:</b> arronfurguson@bcit.ca</span><br>
+<h5>FirstName <Br> LastName</h5><br>
+<span><b>Email address:</b> arronferguson@bcit.ca</span><br>
 <span><b></b></span>
     
 </body>
+    
+    <script>
+$(document).ready(function(){
+    $.ajax({
+                            url: "../controller/profile_authorization.php",
+                            type: "POST",
+                            dataType: "json",
+                            data: {
+                                method: "post",
+                                id:sessionStorage.getItem("id"),
+                            },
+                            success: function(resp2){
+                                alert("heyoOOO");
+                                console.log(resp2);
+                                var h2 = document.createElement("h2");
+                                var name = sessionStorage.getItem("name");
+                                console.log(name);
+                                //h2.innerHTML = name;
+                                
+                                
+                                var h3 = document.createElement("h3");
+                                var pass = sessionStorage.getItem("pass");
+                                h3.innerHTML = pass;
+                                
+                                document.body.appendChild(h2);
+                                document.body.appendChild(h3);
+                                //console.log(username);
+                                //alert(resp2);
+                                //location.href = "profile.html"
+                                //location.href = "Main_Page.html";
+                        }
+                  });
+    
+});
+    </script>
     
 </html>

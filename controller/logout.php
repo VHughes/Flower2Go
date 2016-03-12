@@ -27,18 +27,18 @@ loadScripts();
 
             } else {
                 // error message
-                $data = array("status" => "errors", "msg" => Messages::getMessages());
+                $data = array("4status" => "errors", "msg" => Messages::getMessages());
             }
 
         } else {
 
-            $data = array("status" => "error", "msg" => "AJAX Required.");
+            $data = array("5status" => "error", "msg" => "AJAX Required.");
 
         }
 
 
     } else {
-        $data = array("status" => "error", "msg" => "Only POST allowed.");
+        $data = array("6status" => "error", "msg" => "Only POST allowed.");
     }
 
 

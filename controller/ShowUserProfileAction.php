@@ -24,10 +24,10 @@ class ShowUserProfileAction {
         // http://php.net/manual/en/types.comparisons.php
 
 
-        if(Session::get('isLoggedIn') && Session::get('user_name')) {
+        if(Session::get('isLoggedIn') && Session::get('username')) {
             // here's where we call the user manager which will talk to
             // the DB for us
-            $profile = $this->userManager->getUserProfile(Session::get('user_name'));
+            $profile = $this->userManager->getUserProfile(Session::get('username'));
 
             if($profile != null) {
                 // found a user by that name

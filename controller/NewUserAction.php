@@ -21,13 +21,7 @@ class NewUserAction {
 
     public function register() {
 
-        if(Session::get('isLoggedIn')) {
-            
-            Messages::addMessage("info", "You are already logged in.");
-            
-            return $this;
-            
-        } else {
+ 
              $response = array();
 
             // params have to be there
@@ -37,10 +31,11 @@ class NewUserAction {
             $fname = $this->params->getValue('firstname');
             $lname = $this->params->getValue('lastname');
             $email = $this->params->getValue('email');
-            echo $usr . " " . $pwd . " " . $fname . " " . $lname . " " . $email;
-            if($usr != null && $pwd != null && $fname != null && $lname != null && $email != null) {
+            echo $usr . " " . $pwd . " " . $fname . " " . $lname . " " . $email . " " . $encrypt;
+            if($usr != null && $pwd != null && $fname != null && $lname != null && $email != null)
+            {
                 // check if user name and password are correct
-                $user = $this->userManager->addUser($fname, $lname, $usr, $pwd, $email);
+                $user = $this->userManager->addUser($fname, $lname, $usr, $encrypt, $email);
       
                 if($user != null) {
                     // log user in
@@ -53,12 +48,6 @@ class NewUserAction {
                     //return $response;
                     
 
-            } else{
-                    Messages::addMessage("info", "Log in user and/or password incorrect.");
-                    return null;
-            
-                }
-                
             } else {
                 Messages::addMessage("warning", "'user_name' and/or 'password' parameters missing.");
                 return null;

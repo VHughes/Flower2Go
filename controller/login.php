@@ -20,23 +20,33 @@ loadScripts();
             $response = $userLoginAction->login();
 
             if($response) {
-
-                $data = array("status" => "success", "user" => $response);
+//var_dump($response);
+                $data = array("user" => $response);
+                
+                echo json_encode($data, JSON_FORCE_OBJECT);
+                return;
+                //return;
 
             } else {
                 // error message
-                $data = array("status" => "error", "msg" => Messages::getMessages());
+                $data = array("1status" => "error", "msg" => Messages::getMessages());
+                echo json_encode($data, JSON_FORCE_OBJECT);
+                return;
             }
         } else {
 
-            $data = array("status" => "error", "msg" => "AJAX Required.");
+            $data = array("2status" => "error", "msg" => "AJAX Required.");
+            echo json_encode($data, JSON_FORCE_OBJECT);
+                return;
         }
     } else {
-        $data = array("status" => "error", "msg" => "Only POST allowed.");
+        $data = array("3status" => "error", "msg" => "Only POST allowed.");
+        echo json_encode($data, JSON_FORCE_OBJECT);
+                return;
     }
 
     // lastly send JSON response
-    echo json_encode($data, JSON_FORCE_OBJECT);
+    //echo json_encode($data, JSON_FORCE_OBJECT);
 
     // for objects do this:
     // json_encode(get_object_vars($your_object));
