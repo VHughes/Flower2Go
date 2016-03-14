@@ -14,7 +14,6 @@ class ShoppingCartManager {
     }
 
     public function startCart() {
-         
         $sql = "INSERT INTO cart (state, total) values ('started', 0.00)";
         $id = $this->db->getTransactionID($sql);
         // return id of the cart that was started

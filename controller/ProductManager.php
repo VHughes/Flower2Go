@@ -14,7 +14,7 @@ class ProductManager {
     }
 
     public function listProducts() {
-        $sql = "SELECT SKU, price, description FROM products";
+        $sql = "SELECT SKU, price, description, quantity, title FROM products";
         $rows = $this->db->query($sql);
         return $rows;
     }
