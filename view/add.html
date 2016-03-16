@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Select Page</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>    
+<link href="CSS/Flower2Go_Main.css" rel="stylesheet" type="text/css">
+    
+     <style>
+
+
+      #shoppingCart {
+        list-style-type: none;
+      }
+
+      #shoppingCart li {
+        width: 100%;
+      }
+
+      #productTable{
+        border: 1px solid black;
+        float: left;
+        width: 100%;
+      }
+
+      #productTable input {
+        width: 60px;
+      }
+    </style>
+</head>
+    
+
+
+<body>
+    
+    <span id="Welcome">Welcome <b>Arron_Ferguson</b></span>
+    
+<!--    
+    <img onclick="location.href = 'shoppingcart.html';" id="ShoppingCartBut" src="ASSETS/ShoppingCartIcon.png" height="40px" width="45px"/>
+    <img onclick="location.href = 'adminprofile.html';" id="ProfileBut" src="ASSETS/ProfileIcon.png" height="40px" width="45px"/><br></br>
+    
+<div class="form">
+<button id = "SinglesBut" class = "but">Singles</button></br>
+    
+    
+    
+    
+<div id= 'SinglesDiv' style="display:none;">
+    <div class="imageContainer"> 
+        <div class="SBox1">
+            <p class="overlay" id="Title1"><b>Red Rose</b></p>
+            <h2 id="roseprice">$4.99</h2>
+           <!-- <button class="overlay" id="AddToCart">Add to cart</button>
+            <img id="Single1" class="pic" src="ASSETS/MockItems/Single1.jpg" height="200px" width="200px"/>
+            <button class="BuyNow" id="singlebut">Add to Cart</button>
+        </div>
+        
+        <div class="SBox1">
+            <p class="overlay" id="Title2"><b>Blue Rose</b></p>
+            <h2 id="bluerose">$6.99</h2>
+            <img id="Single2" class="pic" src="ASSETS/MockItems/Single2.jpg" height="200px" width="200px"/>
+            <button class="BuyNow" id="singlebut2" >Add to Cart</button>
+        </div>
+        
+        <div class="SBox1">
+            <p class="overlay" id="Title3"><b>Daffodil</b></p>
+            <h2 id="daff">$2.99</h2>
+            <img id="Single3" class="pic" src="ASSETS/MockItems/Single3.jpg" height="200px" width="200px"/>               <button class="BuyNow" id="singlebut3">Add to Cart</button>
+        </div>
+        
+        <br></br>
+    </div>
+</div>
+    
+    
+    
+
+<button id = "BouquetsBut" class = "but">Bouquets</button></br>
+    <div id= 'BouquetsDiv' style="display:none;">
+        <span id="BBox1"><img id="Bouquet1" class="pic" src="ASSETS/MockItems/Bouquet1.jpg" height="200px" width="200px"/></span>
+        <span id="BBox2"><img id="Bouquet2" class="pic" src="ASSETS/MockItems/Bouquet2.jpg" height="200px" width="200px"/></span>
+        <span id="BBox3"><img id="Bouquet3" class="pic" src="ASSETS/MockItems/Bouquet3.jpg" height="200px" width="200px"/></span>
+    </div>
+<button id = "EventsBut" class = "but">Events</button>
+    <div id= 'EventsDiv' style="display:none;"/>
+        <span id="EBox1"><img id="Event1" class="pic" src="ASSETS/MockItems/Event1.jpg" height="200px" width="200px"/></span>
+        <span id="EBox2"><img id="Event2" class="pic" src="ASSETS/MockItems/Event2.jpg" height="200px" width="200px"/></span>
+        <span id="EBox3"><img id="Event3" class="pic" src="ASSETS/MockItems/Event3.jpg" height="200px" width="200px"/></span>
+    </div>
+</div>  
+-->
+<body>
+
+    <div id="content">
+
+      <div id="shoppingCartContainer">
+
+        <table id="productTable">
+
+          <thead>
+            <tr>
+              <th>Title</th> 
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Number Available</th>    
+              <th>Add</th>
+                <tr>
+                <td><input type="text" value="Title"/></td>
+                <td><input type="text" value="Description"/></td>
+                <td><input type="text" value="Title your item"/></td>
+                <td><input type="text" value="Set A Price"/></td>
+                <td><input type="text" value="Number Available"/></td>
+                </tr>
+            </tr>
+          </thead>
+          <tbody id="productslist">
+            <!-- THIS SECTION WILL BE REPLACED BY SERVER GENERATED ROWS -->
+
+
+            <!-- THIS SECTION WILL BE REPLACED BY SERVER GENERATED ROWS -->
+          </tbody>
+        </table>
+        <input type="button" value="Add Items" id="add"/>
+        <input type="button" value="View Items Available" id="view"/>
+
+        <h2>Cart Summary</h2>
+        <ul id="shoppingCart">
+          <!--<li data-item-qty="1" data-item-sku="sk-438s3x">Coffee Cup (1) &#160;
+            <input type="button" data-remove-button="remove" value="X"/></li>-->
+        </ul>
+        <input type="button" value="Check Out" id="checkoutcart"/>
+        <span style="display: inline; font-size: 8pt;"></span>
+
+      </div>
+    </div>

@@ -32,7 +32,7 @@ class ShoppingCartManager {
         return $count;
     }
 
-    public function addItemsToCart($items, $cart_id) {
+    public function addItemsToCart() {
 
         foreach($items as $item) {
             $sku = $item['sku'];
@@ -47,6 +47,22 @@ class ShoppingCartManager {
             $this->db->affectRows($sql);
         }
 
+    }
+    
+    public function adminAddItemsToCart($items){
+        
+        $title = $items['title'];
+        $sku = $items['sku'];
+        $desc = $items['desc'];
+        $price = $items['price'];
+        $qty = $items['qty'];
+   
+        
+        
+        $sql = "INSERT INTO products (title, quantity, price, description, SKU)
+                VALUES ($title, $qty, $price, $desc, $sku)";
+            $this->db->affectRows($sql);
+    //VALUES ($product_id, $cart_id, $qty)";
     }
 
 }

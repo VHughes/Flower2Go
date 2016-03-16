@@ -20,6 +20,8 @@
     <button id="logout" class="LogOutbut">Log out</button><br></br>
     <p>Create a new administrator profile <a href="usersignup.html">here</a></p>
 
+<h2 id="h2">HELLO WORLD</h2>
+
 </form>
 
 <script>
@@ -58,7 +60,13 @@
                             success: function(resp2){
                                 //alert("heyoOOO");
                                 //console.log(resp2.user.username);
+
+                                console.log("\n");
                                 console.log(resp2);
+                                console.log("\n aaa");
+                                console.log(resp2);
+                                console.log("\n aaa");
+                                console.log(resp2.user);
                                 console.log(resp2['user']);
                                 console.log(resp2.username);
                                 console.log(resp2['username']);
@@ -68,6 +76,11 @@
                                 console.log(resp2.username);
                                 console.log(resp2[username]);
                                 
+                                //var obj = JSON.parse(resp2);
+                                
+                                //document.getElementById("h2").innerHTML = obj.username;
+                                
+                                //h3.innerHTML = obj.username;
                                 //var user = resp2.user;
                                
                                 //console.log(resp2.name);
