@@ -9,9 +9,9 @@
 
 <body>
     
-<h2>Username</h2><br>
-<h5>FirstName <Br> LastName</h5><br>
-<span><b>Email address:</b> arronferguson@bcit.ca</span><br>
+<h2 id="welcome"></h2><br>
+<h3 id="pass"></h3>
+<h3 id="email"></h3>
 <span><b></b></span>
     
 </body>
@@ -21,27 +21,53 @@ $(document).ready(function(){
     $.ajax({
                             url: "../controller/profile_authorization.php",
                             type: "POST",
-                            dataType: "json",
+                            dataType: "html",
                             data: {
                                 method: "post",
-                                id:sessionStorage.getItem("id"),
+                                id:sessionStorage.getItem("user"),
                             },
                             success: function(resp2){
                                 alert("heyoOOO");
+                                console.log(resp2.id);
                                 console.log(resp2);
-                                var h2 = document.createElement("h2");
-                                var name = sessionStorage.getItem("name");
-                                console.log(name);
-                                console.log(resp2);
+                                console.log(sessionStorage.getItem("user"));
+                                console.log(sessionStorage.getItem("pass"));
+                                
+                                
+                                
+                                //console.log(name);
+                                //console.log(resp2.user.username);
                                 //h2.innerHTML = name;
                                 
+                                document.getElementById("welcome").innerHTML = "Welcome " + sessionStorage.getItem("user") + "!";
+                                 document.getElementById("pass").innerHTML = "Username: " + sessionStorage.getItem("pass");
+                                 document.getElementById("email").innerHTML = "Email: " + sessionStorage.getItem("email");
                                 
-                                var h3 = document.createElement("h3");
-                                var pass = sessionStorage.getItem("pass");
-                                h3.innerHTML = pass;
+                                var but = document.createElement("button");
+                                but.id = "butt";
+                                but.innerHTML = "Edit Products";
                                 
-                                document.body.appendChild(h2);
-                                document.body.appendChild(h3);
+                                document.body.appendChild(but);
+                                but.onclick = function(){
+                                    location.href = "AdminAdd.html";
+                                
+                                }
+                                
+                                /*
+                                var username = document.createElement("h3");
+                                var password = document.createElement("h3");
+                                var email = document.createElement("h3");
+                              //  var pass = sessionStorage.getItem("pass");
+                                
+//document.body.appendChild(h2);
+                                document.body.appendChild(username);
+                                document.body.appendChild(password);
+                                document.body.appendChild(email);
+                                
+                                username.innerHTML = sessionStorage.getItem("user");
+                                password.innerHTML = sessionStorage.getItem("pass");
+                                email.innerHTML = sessionStorage.getItem("email");
+                                */
                                 //console.log(username);
                                 //alert(resp2);
                                 //location.href = "profile.html"

@@ -26,6 +26,7 @@ class Parameters {
 
     public function getValue($key) {
         if(isset($key)) {
+            
             return $this->values[$key];
         }
         return null;

@@ -3,8 +3,12 @@
 // Business Delegate
 
 // load all scripts into memory
-require_once('init.php');
-loadScripts();
+//require_once('init.php');
+require_once('UserLoginAction.php');
+require_once('Parameters.php');
+
+
+//loadScripts();
 
     $data = array("status" => "not set!");
 

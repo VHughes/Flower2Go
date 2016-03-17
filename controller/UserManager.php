@@ -13,17 +13,18 @@ class UserManager {
         $this->db = DBConnector::getInstance();
     }
 
-    public function getUserProfile($name) {
-        $params = array(":name" => $name);
-        $sql = "SELECT * FROM users WHERE username = :name";
-        $rows = $this->db->query($sql, $params);
+    public function getUserProfile() {
+       // $params = array(":name" => $name);
+        $id = $_POST['id'];
+        $sql = "SELECT * FROM users WHERE username = $id";
+        $rows = $this->db->query($sql);
            
         //var_dump($rows[0]);
         if(count($rows) == 1) {
             return $rows[0];
         }
         // otherwise
-        return null;
+        return "error";
     }
 
     public function findUser($usr, $pwd) {

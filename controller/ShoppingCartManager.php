@@ -1,6 +1,6 @@
 <?php
 
-//require_once('./DBConnector.php');
+require_once('../model/DBConnector.php');
 
 //$um = new ShoppingCartManager();
 
@@ -32,6 +32,15 @@ class ShoppingCartManager {
         return $count;
     }
 
+    public function viewAllProducts(){
+        $sql = "SELECT * FROM products";
+        $rows = $this->db->affectRows($sql);
+        return $rows;
+  
+    
+    }
+    
+    
     public function addItemsToCart() {
 
         foreach($items as $item) {
@@ -49,22 +58,28 @@ class ShoppingCartManager {
 
     }
     
-    public function adminAddItemsToCart($items){
+    public function adminAddItemsToCart(){
+   /*     
+    $items = array("title" => $_POST['items']['title'], "qty" => $_POST['items']['qty'], "desc" => $_POST['items']['desc'], "price" => $_POST['items']['price'], "sku" => $_POST['items']['sku']);
+    */
         
-        $title = $items['title'];
-        $sku = $items['sku'];
-        $desc = $items['desc'];
-        $price = $items['price'];
-        $qty = $items['qty'];
-   
+        $title = $_POST['title'];
+        $sku = $_POST['sku'];
+        $desc = $_POST['desc'];
+        $price = $_POST['price'];
+        $qty = $_POST['qty'];
         
+  
         
         $sql = "INSERT INTO products (title, quantity, price, description, SKU)
-                VALUES ($title, $qty, $price, $desc, $sku)";
-            $this->db->affectRows($sql);
+                VALUES ('$title', '$qty', '$price', '$desc', '$sku')";
+            $rows = $this->db->affectRows($sql);
+        return $rows;
+        
     //VALUES ($product_id, $cart_id, $qty)";
     }
 
 }
 
 ?>
+

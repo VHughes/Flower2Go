@@ -60,25 +60,24 @@
                             success: function(resp2){
                                 //alert("heyoOOO");
                                 //console.log(resp2.user.username);
-
-                                console.log("\n");
-                                console.log(resp2);
-                                console.log("\n aaa");
-                                console.log(resp2);
-                                console.log("\n aaa");
-                                console.log(resp2.user);
-                                console.log(resp2['user']);
-                                console.log(resp2.username);
-                                console.log(resp2['username']);
-                                console.log(this.username);
-                                console.log(resp2.user);
-                                console.log(this.user);
-                                console.log(resp2.username);
-                                console.log(resp2[username]);
                                 
-                                //var obj = JSON.parse(resp2);
+                                console.log(resp2);
                                 
-                                //document.getElementById("h2").innerHTML = obj.username;
+                    
+                                
+                                var obj = JSON.parse(resp2);
+                                console.log(obj.user.username); 
+                                sessionStorage.setItem("user", obj.user.username);
+                                sessionStorage.setItem("pass", obj.user.password);
+                                sessionStorage.setItem("email", obj.user.email);
+                                sessionStorage.setItem("id", resp2[0].id);
+                                
+                                console.log(sessionStorage.getItem("user"));
+                                console.log(sessionStorage.getItem("email"));
+                                document.getElementById("h2").innerHTML = obj.user.username;
+                                
+                                alert("Welcome " + sessionStorage.getItem("user") + "!");
+                                location.href = "profile.html";
                                 
                                 //h3.innerHTML = obj.username;
                                 //var user = resp2.user;
@@ -103,6 +102,7 @@
                                 //location.href = "Main_Page.html";
                         }
                   });
+            
                 
                 });
         

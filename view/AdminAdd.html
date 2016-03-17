@@ -140,6 +140,7 @@
     
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>
+        
 $(document).ready(function() {
 
 
@@ -304,14 +305,14 @@ $(document).ready(function() {
                     dataType: 'html',
                     data: {
                         action: "added",
-                        items: {
+                        //method: "added",
+
                             title:title,
                             price:price,
                             qty:qty,
                             desc:desc,
                             sku:sku,
-                            
-                        },
+                     
                     },
                     success: function(returnedData) {
                         alert("hey");
@@ -329,11 +330,40 @@ $(document).ready(function() {
                     }
                 });
             });
+    
+    
+         $("#view").click(function() {
+                console.log(document.getElementById("view").value);
+                console.log("View All Items.");
+                 $.ajax({
+                    url: "../controller/AdminShoppingCart.php",
+                    type: "POST",
+                    dataType: 'html',
+                    data: {
+                        method: "view",
+                    },
+                    success:function(resp){
+                        alert("view all");
+                        console.log(resp); 
+                        for(var i = 0; i<resp.length; i++){
+                            var imgs = document.createElement("img");
+                            imgs.title = resp[i].title;
+                            imgs.style.height = "150px";
+                            imgs.style.width = "auto";
+                            
+                            document.body.appendChild(imgs);
+                        
+                    }
+                    }
         
+});
+});
 });
         
         
     </script>
+    
+
     </body>
 </html>
         

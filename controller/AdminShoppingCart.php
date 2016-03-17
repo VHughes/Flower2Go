@@ -1,8 +1,38 @@
 <?php
+include("ShoppingCartManager.php");
+//require_once('init.php');
+//loadScripts();
 
-require_once('init.php');
-loadScripts();
+if(isset($_POST['action'])) {
+    LoadAdminShoppingCart();
+}
 
+function LoadAdminShoppingCart() {
+    $scm = new ShoppingCartManager();
+    if($_POST['action'] == "added"){
+        
+        $scm->adminAddItemsToCart(); 
+    } else {
+        //failed to add
+    }
+}
+
+if(isset($_POST['method'])) {
+    viewAllProducts();
+}
+
+function viewAllProducts() {
+    $scm = new ShoppingCartManager();
+    if($_POST['method'] == "view"){
+        
+        $scm->viewAllProducts();
+    } else {
+        
+        echo "fail";
+        //failed to add
+    }
+}
+/*
     $data = array("status" => "not set!");
 
     if(Utils::isPOST()) {
@@ -10,35 +40,34 @@ loadScripts();
 
         $parameters = new Parameters("POST");
 
-        $action = $parameters->getValue('action');
+        //$action = $parameters->getValue('action');
 
         if (session_status() == PHP_SESSION_NONE) {
             session_start();
         }
 
-        switch($action) {
-            case "added":
                 // start the cart, so start session, create cart table in DB
                 if(isset($_SESSION['started'])) {
                     $data = array("status" => "fail", "msg" => "Something went wrong - BOOM.");
                     echo json_encode($data, JSON_FORCE_OBJECT);
                     return;
                 }
-                
+      /*          
                 $items = array("title" => $_POST['items']['title'], "qty" => $_POST['items']['qty'], "desc" => $_POST['items']['desc'], "price" => $_POST['items']['price'], "sku" => $_POST['items']['sku']);
                 
-              //  $memcachedConfig = array("host" => "127.0.0.1","port" => "11211");
+             */ //  $memcachedConfig = array("host" => "127.0.0.1","port" => "11211");
                 //print_r ($memcachedConfig['host']);
                 
-            json_encode($items);
+   /*
                 
                 $id = $scm->adminAddItemsToCart($items);
-                if(!empty($id)) {
+        
+                /*if(!empty($id)) {
 
                     $_SESSION['started'] = "true";
                     $_SESSION['id'] = $id;
                    
-                    
+                 
                     //$data = array("status" => "success", "s_id", => session_id(),
                     //    "cart_id" => $id, "msg" => "Cart started.");
                     $data = array("status" => "success", "cart_id" => $id, "msg" => "Cart started.");
@@ -47,15 +76,8 @@ loadScripts();
                 } else {
                     $data = array("status" => "fail", "msg" => "Cart NOT started.");
                     
-                    $items = array("title" => $_POST['items']['title'], "qty" => $_POST['items']['qty'], "desc" => $_POST['items']['desc'], "price" => $_POST['items']['price'], "sku" => $_POST['items']['sku']);
-                
-              //  $memcachedConfig = array("host" => "127.0.0.1","port" => "11211");
-                //print_r ($memcachedConfig['host']);
-                
-            json_encode($items);
-                
-                $id = $scm->adminAddItemsToCart($items);
-               
+                    
+                }
 
                /* break;
             case "cancelcart":
@@ -106,19 +128,14 @@ loadScripts();
                 break;
 */
 
-
-
+       
 /*
     } else {
         $data = array("status" => "error", "msg" => "Only POST allowed.");
 
     }
-    */
-                }
-        }
-    }
-    echo json_encode($data, JSON_FORCE_OBJECT);
-
-
+ echo json_encode($data, JSON_FORCE_OBJECT);
+}
+*/
 
 ?>
