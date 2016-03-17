@@ -338,22 +338,57 @@ $(document).ready(function() {
                  $.ajax({
                     url: "../controller/AdminShoppingCart.php",
                     type: "POST",
-                    dataType: 'html',
+                    dataType: 'json',
                     data: {
                         method: "view",
                     },
                     success:function(resp){
                         alert("view all");
-                        console.log(resp); 
-                        for(var i = 0; i<resp.length; i++){
-                            var imgs = document.createElement("img");
+                        console.log(resp);
+                
+                      for(var i = 0; i<resp.length; i++){
+                          
+                        var div = document.createElement("div");
+                        div.style.height = "auto";
+                        div.style.width = "20%";
+                        div.style.border = "solid";
+                        div.id = resp[i].id;
+                        document.body.appendChild(div);
+                        
+                        var title = document.createElement("h3");
+                        var price = document.createElement("h3");
+                        var desc = document.createElement("h3");
+                        var qty = document.createElement("h3");
+                        var sku = document.createElement("h3");
+                        
+                        title.innerHTML = resp[i].title;
+                        price.innerHTML = resp[i].price;
+                        desc.innerHTML = resp[i].description;
+                        qty.innerHTML = resp[i].quantity;
+                        sku.innerHTML = resp[i].SKU;
+                          
+                        div.appendChild(title);
+                        div.appendChild(price);
+                        div.appendChild(desc);
+                        div.appendChild(qty);
+                        div.appendChild(sku);
+                          
+                          div.onclick = function(){
+                                alert(this.id);
+                          }
+                          
+                          /*
+                       var imgs = document.createElement("img");
                             imgs.title = resp[i].title;
+                            
                             imgs.style.height = "150px";
                             imgs.style.width = "auto";
                             
                             document.body.appendChild(imgs);
-                        
-                    }
+                       
+                    */
+                } 
+                
                     }
         
 });

@@ -18,18 +18,15 @@ function LoadAdminShoppingCart() {
 }
 
 if(isset($_POST['method'])) {
-    viewAllProducts();
+    viewAllAdminProducts();
 }
 
-function viewAllProducts() {
+function viewAllAdminProducts() {
     $scm = new ShoppingCartManager();
     if($_POST['method'] == "view"){
         
-        $scm->viewAllProducts();
-    } else {
-        
-        echo "fail";
-        //failed to add
+        $response = $scm->viewAllProducts();
+        echo json_encode($response);
     }
 }
 /*

@@ -34,9 +34,11 @@ class ShoppingCartManager {
 
     public function viewAllProducts(){
         $sql = "SELECT * FROM products";
-        $rows = $this->db->affectRows($sql);
+        $rows = $this->db->query($sql);
+        if(count($rows) == 1) {
+            return $rows[0];
+        }
         return $rows;
-  
     
     }
     
