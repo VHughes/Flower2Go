@@ -29,6 +29,25 @@ function viewAllAdminProducts() {
         echo json_encode($response);
     }
 }
+
+
+if(isset($_POST['update'])) {
+    viewAllAdminProducts();
+}
+
+function updateAdminProducts() {
+    $scm = new ShoppingCartManager();
+    if($_POST['update'] == "update"){
+        
+        $response = $scm->updateAdminProducts();
+        echo json_encode($response);
+    }
+}
+
+
+
+
+
 /*
     $data = array("status" => "not set!");
 

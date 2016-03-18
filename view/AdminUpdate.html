@@ -1,0 +1,19 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script>
+   $(document).ready(function() {
+       $.ajax({
+         url: "../controller/AdminShoppingCart.php",
+         type: "POST",
+         dataType: 'html',
+         data: {
+             update: "update",    
+         },
+         success: function(resp) {
+         }
+
+       });
+       
+       
+   });
+
+</script>
