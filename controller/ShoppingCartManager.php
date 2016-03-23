@@ -59,6 +59,21 @@ class ShoppingCartManager {
         }
 
     }
+  
+    public function updateAdminShoppingCart(){
+        
+        $title = $_POST['newtitle'];
+        $sku = $_POST['newsku'];
+        $desc = $_POST['newdesc'];
+        $price = $_POST['newprice'];
+        $qty = $_POST['newqty']; 
+        $id = $_POST['id'];
+        
+        $sql = "UPDATE products SET title='$title', description='$desc', sku='$sku', price='$price', quantity='$qty' WHERE id= $id";
+        $count = $this->db->affectRows($sql);
+        return $count;
+        }
+    
     
     public function adminAddItemsToCart(){
    /*     

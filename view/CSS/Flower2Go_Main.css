@@ -446,3 +446,20 @@ input[type=text]:invalid {
     font-size:"2px";
     font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
 }
+
+
+/* ADMIN SHOPPING CART SHIT */
+
+#formform {
+    display: none;
+    z-index: 100;
+    position: fixed;
+    background-color: purple;
+    height: auto;
+    width: 500px;
+    left: 20%;
+    bottom: 10%;
+   
+
+
+}
