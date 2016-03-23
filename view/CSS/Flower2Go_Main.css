@@ -446,3 +446,58 @@ input[type=text]:invalid {
     font-size:"2px";
     font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
 }
+
+.ItemBoxes {
+    float: left;
+    margin: 0 0 5% 5%;
+    width: 25%;
+    /*height: auto;*/
+    height: auto;
+}
+
+.ItemInput {
+    width: 100px;
+}
+
+#startCart, #add, #view {
+	border-radius: 10px;
+<<<<<<< HEAD
+=======
+	width: 75%;
+>>>>>>> origin/master
+	height: 60px;
+	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+    background-color: #ad7cb0;
+	color:#ffffff;
+}
+
+#cancelCart {
+	border-radius: 10px;
+<<<<<<< HEAD
+=======
+	width: 75%;
+>>>>>>> origin/master
+	height: 60px;
+	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+    background-color: #c18597;
+	color:#ffffff;
+}
+
+#checkoutcart {
+	border-radius: 10px;
+<<<<<<< HEAD
+=======
+	width: 75%;
+>>>>>>> origin/master
+	height: 60px;
+	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+    background-color: #70b97a;
+	color:#ffffff;
+}
+
+th, tr {
+    font-family: "Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
+}

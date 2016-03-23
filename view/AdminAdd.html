@@ -107,11 +107,11 @@
               <!--<th>Number Available</th> 
               <th>Add</th> -->
                 <tr>
-                <td><input type="text"  id="title"/></td>
-                <td><input type="text"  id="desc"/></td>
-                <td><input type="text"  id="qty"/></td>
-                <td><input type="text"  id="price"/></td>
-                <td><input type="text"  id="sku"/></td>
+                <td><input type="text"  id="title" class="ItemInput"/></td>
+                <td><input type="text"  id="desc" class="ItemInput"/></td>
+                <td><input type="text"  id="qty" class="ItemInput"/></td>
+                <td><input type="text"  id="price" class="ItemInput"/></td>
+                <td><input type="text"  id="sku" class="ItemInput"/></td>
                
                 <!--<td><input type="text" value="Number Available" /></td> -->
                 </tr>
@@ -349,9 +349,9 @@ $(document).ready(function() {
                       for(var i = 0; i<resp.length; i++){
                           
                         var div = document.createElement("div");
-                        div.style.height = "auto";
-                        div.style.width = "20%";
+                       
                         div.style.border = "solid";
+                        div.className = "ItemBoxes";
                         div.id = resp[i].id;
                         document.body.appendChild(div);
                         
@@ -383,10 +383,14 @@ $(document).ready(function() {
                           
                           edit.onclick = function(){
                             
+                           /* var titleLbl = document.createElement("p");
+                            titleLbl.id = "titleLabel";
+                            titleLbl.innerHTML = "Title";*/
+                            
                             var title1 = document.createElement("input");
                             title1.id = "title111";
                               
-                              var title2 = document.createElement("input");
+                            var title2 = document.createElement("input");
                             title2.id = "title222";
                                                             
 
@@ -401,6 +405,7 @@ $(document).ready(function() {
                               div2.style.position = "absolute";
                               div2.style.backgroundColor = "purple";
                               div2.style.height = "auto";
+                              //div2.style.height = "500px;";
                               div2.style.width = "500px";
                               div2.style.top = "20%";
                               div2.style.left = "60%";
