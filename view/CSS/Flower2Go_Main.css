@@ -504,10 +504,7 @@ input[type=text]:invalid {
 
 #checkoutcart {
 	border-radius: 10px;
-<<<<<<< HEAD
-=======
 	width: 75%;
->>>>>>> origin/master
 	height: 60px;
 	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
 	font-size: 16px;
