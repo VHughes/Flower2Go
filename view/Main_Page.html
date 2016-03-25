@@ -33,7 +33,9 @@
 
 <body>
     
-    <span id="Welcome">Welcome <b>Arron_Ferguson</b></span>
+    <!--<span id="Welcome">Welcome <b>Arron_Ferguson</b></span><br></br>-->
+    <h2>Shopping Cart</h2>
+    <img onclick="location.href = 'profile.html';" id="ProfileButton" src="ASSETS/ProfileIconCircle.png" width="40px" height="40px">
     
 <!--    
     <img onclick="location.href = 'shoppingcart.html';" id="ShoppingCartBut" src="ASSETS/ShoppingCartIcon.png" height="40px" width="45px"/>
@@ -125,6 +127,7 @@
             <input type="button" data-remove-button="remove" value="X"/></li>-->
         </ul>
         <input type="button" value="Check Out" id="checkoutcart"/>
+        <br></br>
         <span style="display: inline; font-size: 8pt;"><i>You'll see taxes and other shipping costs during checkout.</i></span>
 
       </div>
@@ -346,7 +349,7 @@
                     data: {action: "checkoutcart", items: itemsAsJSON},
                     success: function(returnedData) {
                         console.log("cart check out response: ", returnedData);
-                        alert("Thanks");
+                        alert("Your order has been processed! Thank-you.");
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
                         console.log(jqXHR.statusText, textStatus);

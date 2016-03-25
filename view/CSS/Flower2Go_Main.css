@@ -17,10 +17,7 @@ span {
 
 .but {
 	border-radius: 10px;
-<<<<<<< HEAD
-=======
 	width: 75%;
->>>>>>> origin/master
 	height: 60px;
 	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
 	font-size: 16px;
@@ -58,11 +55,8 @@ button.shop:hover{
 
 .loginInputs {
 	/*border-radius: 10px;*/
-<<<<<<< HEAD
 
-=======
 	width: 75%;
->>>>>>> origin/master
 	height: 30px;
 	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
 	font-size: 12px;
@@ -428,8 +422,6 @@ input[type=text]:invalid {
 
 #shop {
 	background-color:#685f9c;
-<<<<<<< HEAD
-=======
 	/*background-color:#31A772;*/
 	/*border-radius: 10px;*/
 	width: 75%;
@@ -439,7 +431,6 @@ input[type=text]:invalid {
 	font-size: 12px;
 	color:#ffffff;	
 }
->>>>>>> origin/master
 
 }
 #footerText {
@@ -478,10 +469,9 @@ input[type=text]:invalid {
 }
 
 #startCart, #add, #view {
+    margin-top: 30px;
 	border-radius: 10px;
-
 	width: 75%;
-
 	height: 60px;
 	font-family:"Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
 	font-size: 16px;
@@ -514,4 +504,10 @@ input[type=text]:invalid {
 th, tr {
     font-family: "Helvetica Neue", Gotham, Helvetica, Arial, sans-serif;
 
+}
+
+#ProfileButton {
+    position:fixed;
+    margin-top: -55px;
+    margin-left: 42%;
 }
