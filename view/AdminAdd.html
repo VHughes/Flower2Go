@@ -145,6 +145,7 @@
        <input id="newsku"class="simple_large" type="text" placeholder="SKU"></input><br>
        <input id="newprice"class="simple_large" type="text" placeholder="Price"></input><br>
        <button id="updated">Update!</button>
+       <button id="delete">Delete This Post</button>
      </form>
  
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -395,25 +396,12 @@ $(document).ready(function() {
                               alert(this.id);
                               var ID = this.id;
                               console.log(ID);
-
-                            
-                           /* var titleLbl = document.createElement("p");
-                            titleLbl.id = "titleLabel";
-                            titleLbl.innerHTML = "Title";*/
-                            
-                            var title1 = document.createElement("input");
-                            title1.id = "title111";
-                              
-                            var title2 = document.createElement("input");
-                            title2.id = "title222";
-                                                            
-
-                             //var qty1 = document.createElement("input");
-                       
+;
+                       /*
                             var done = document.createElement("button");
                             done.innerHTML = "Update!";
                             done.style.zIndex = 100;
-                              
+                              */
                               var div2 = document.createElement("div");
                               div2.style.zIndex = 100;
                               div2.style.position = "absolute";
@@ -428,20 +416,22 @@ $(document).ready(function() {
                               
                               var update = document.getElementById("updated");
                               update.onclick = function(e){
-                                  
+                                  console.log("clicked!");
                                   
                                   var newtitle = document.getElementById("newtitle").value;
                                   var newdesc = document.getElementById("newdesc").value;
                                   var newqty = document.getElementById("newqty").value;
                                   var newprice = document.getElementById("newprice").value;
                                   var newsku = document.getElementById("newsku").value;
+                                  
+                                    console.log(newtitle);
                                 
                                  $.ajax({
                                     url: "../controller/AdminShoppingCart.php",
                                     type: "POST",
-                                    dataType: 'json',
+                                    dataType: 'html',
                                     data: {
-                                        method: "update",
+                                        thing: "update",
                                         newtitle: newtitle,
                                         newdesc: newdesc,
                                         newqty: newqty,
@@ -452,12 +442,38 @@ $(document).ready(function() {
                                     success:function(resp2){
                                         alert("Updated!");
                                         console.log(resp2); 
-                                  
+                                        $("#formform").hide();
                                         }
                                  }); 
                         e.preventDefault();
                               }
-                               
+                              
+                        var del = document.getElementById("delete");
+                        del.onclick = function(e){
+                            $.ajax({
+                            url: "../controller/AdminShoppingCart.php",
+                                    type: "POST",
+                                    dataType: 'html',
+                                    data: {
+                                        delete: "delete",
+                                        id: ID,
+                                    },
+                                    success:function(resp2){
+                                        console.log(resp2);
+                                        alert("Item Successfully Deleted!");
+                                        $("#formform").hide();
+                                        location.reload();
+                                    
+                                    }
+                            
+                            });
+                            e.preventDefault();
+                        }
+                              
+                              
+                              
+                              
+                               console.log(newtitle);
                
                           }
                               

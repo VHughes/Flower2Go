@@ -31,13 +31,13 @@ function viewAllAdminProducts() {
 }
 
 
-if(isset($_POST['update'])) {
-    viewAllAdminProducts();
+if(isset($_POST['thing'])) {
+    updateAdminProducts();
 }
 
 function updateAdminProducts() {
     $scm = new ShoppingCartManager();
-    if($_POST['update'] == "update"){
+    if($_POST['thing'] == "update"){
         
         $response = $scm->updateAdminProducts();
         echo json_encode($response);
@@ -45,6 +45,18 @@ function updateAdminProducts() {
 }
 
 
+if(isset($_POST['delete'])) {
+    deleteAdminProducts();
+}
+
+function deleteAdminProducts() {
+    $scm = new ShoppingCartManager();
+    if($_POST['delete'] == "delete"){
+        
+        $response = $scm->deleteAdminProducts();
+        echo json_encode($response);
+    }
+}
 
 
 

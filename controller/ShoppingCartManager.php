@@ -60,7 +60,7 @@ class ShoppingCartManager {
 
     }
   
-    public function updateAdminShoppingCart(){
+    public function updateAdminProducts(){
         
         $title = $_POST['newtitle'];
         $sku = $_POST['newsku'];
@@ -74,12 +74,19 @@ class ShoppingCartManager {
         return $count;
         }
     
+    public function deleteAdminProducts(){
+        $id = $_POST['id'];
+        $sql = "DELETE FROM products WHERE id = $id";
+        $rows = $this->db->affectRows($sql);
+        return $rows;
+    
+    
+    
+    }
+    
     
     public function adminAddItemsToCart(){
-   /*     
-    $items = array("title" => $_POST['items']['title'], "qty" => $_POST['items']['qty'], "desc" => $_POST['items']['desc'], "price" => $_POST['items']['price'], "sku" => $_POST['items']['sku']);
-    */
-        
+ 
         $title = $_POST['title'];
         $sku = $_POST['sku'];
         $desc = $_POST['desc'];
