@@ -35,7 +35,6 @@
     
     <!--<span id="Welcome">Welcome <b>Arron_Ferguson</b></span><br></br>-->
     <h2>Shopping Cart</h2>
-    <img onclick="location.href = 'profile.html';" id="ProfileButton" src="ASSETS/ProfileIconCircle.png" width="40px" height="40px">
     
 <!--    
     <img onclick="location.href = 'shoppingcart.html';" id="ShoppingCartBut" src="ASSETS/ShoppingCartIcon.png" height="40px" width="45px"/>
@@ -92,7 +91,6 @@
 </div>  
 -->
 <body>
-
     <div id="content">
 
       <div id="shoppingCartContainer">
@@ -121,7 +119,7 @@
         <input type="button" value="Start Cart" id="startCart"/>
         <input type="button" value="Cancel Cart" id="cancelCart"/>
 
-        <h2>Cart Summary</h2>
+        <h2 id="CartSummary">Cart Summary</h2>
         <ul id="shoppingCart">
           <!--<li data-item-qty="1" data-item-sku="sk-438s3x">Coffee Cup (1) &#160;
             <input type="button" data-remove-button="remove" value="X"/></li>-->
@@ -206,6 +204,7 @@
             loadShoppingCartItems();
 
             $('#productslist').on('click', 'input[data-sku-add]', function() {
+                $('#CartSummary').css("display", "block");
                 //console.log(this.getAttribute("data-sku-add"));
 
                 // get the sku

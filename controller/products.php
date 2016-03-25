@@ -17,7 +17,7 @@ loadScripts();
             $price = $row['price'];
             $desc = $row['description'];
             $qty = $row['quantity'];
-            $html .= "<tr>
+            $html .= "<tr id='ShoppingCartTr'>
                         <td data-sku-title='$sku'>$title</td>
                         <td data-sku-desc='$sku'>$desc</td>
                         <td><input data-sku-qty='$sku' type='number' value='1' min='1' max='10' step='1'/></td>

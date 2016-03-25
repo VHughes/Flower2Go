@@ -525,3 +525,11 @@ th, tr {
     border-radius:20px;
     width:30px;
 }
+
+/*#ShoppingCartTr {
+    background-color: #d7c2da;
+}*/
+
+#CartSummary {
+    display: none;
+}
