@@ -511,3 +511,10 @@ th, tr {
     margin-top: -55px;
     margin-left: 42%;
 }
+
+#addBut {
+    background-color: #ad7cb0;
+    color: white;
+    border-radius:20px;
+    width:5px;
+}
