@@ -518,3 +518,10 @@ th, tr {
     border-radius:20px;
     width:5px;
 }
+
+#removeBut {
+    background-color: #c18597;
+    color: white;
+    border-radius:20px;
+    width:30px;
+}

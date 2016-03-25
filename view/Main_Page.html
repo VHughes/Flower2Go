@@ -196,7 +196,7 @@
 
                     var item = "<li data-item-sku='" + sku + "' data-item-qty='" + qty + "' data-item-date='"
                         + date + "'>" + desc + " " + qty + " x $" + price + " = " + subtotal
-                        + " <input type='button' data-remove-button='remove' value='X'/></li>";
+                        + " <input type='button' data-remove-button='remove' id='removeBut' value='X'/></li>";
                     shoppingCartList.append(item);
 
 
@@ -223,7 +223,7 @@
                 var aDate = new Date();
                 var item = "<li data-item-sku='" + sku + "' data-item-qty='" + qty + "' data-item-date='"
                     + aDate.getTime() + "'>" + desc + " " + qty + " x $" + price + " = " + subtotal
-                    + " <input type='button' data-remove-button='remove' value='X'/></li>";
+                    + " <input type='button' data-remove-button='remove' id='removeBut' value='X'/></li>";
                 shoppingCartList.append(item);
 
 
