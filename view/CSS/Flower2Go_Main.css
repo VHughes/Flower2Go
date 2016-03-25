@@ -462,6 +462,8 @@ input[type=text]:invalid {
     width: 25%;
     /*height: auto;*/
     height: auto;
+    background-color: #ddc0df;
+    height: 300px;
 }
 
 .ItemInput {

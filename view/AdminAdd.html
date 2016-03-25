@@ -126,16 +126,16 @@
           </tbody>
         </table>
         <input type="button" value="Add Items" id="add"/>
-        <input type="button" value="View Items Available" id="view"/>
+        <input type="button" value="View Items Available" id="view" style="display:none"/>
 
-        <h2>Cart Summary</h2>
-        <ul id="shoppingCart">
+       <!-- <h2>Cart Summary</h2>
+        <ul id="shoppingCart"> -->
           <!--<li data-item-qty="1" data-item-sku="sk-438s3x">Coffee Cup (1) &#160;
             <input type="button" data-remove-button="remove" value="X"/></li>-->
-        </ul>
+       <!-- </ul>
         <input type="button" value="Check Out" id="checkoutcart"/>
-        <span style="display: inline; font-size: 8pt;"></span>
-
+        <span style="display: inline; font-size: 8pt;"></span> -->
+        <br></br>
       </div>
     </div>
     
@@ -343,7 +343,7 @@ $(document).ready(function() {
             });
     
     
-         $("#view").click(function() {
+       //  $("#view").click(function() {
                 console.log(document.getElementById("view").value);
                 console.log("View All Items.");
                  $.ajax({
@@ -361,7 +361,7 @@ $(document).ready(function() {
                           
                         var div = document.createElement("div");
                        
-                        div.style.border = "solid";
+                        //div.style.border = "solid";
                         div.className = "ItemBoxes";
                         div.id = resp[i].id;
                         document.body.appendChild(div);
@@ -394,7 +394,7 @@ $(document).ready(function() {
                           
                           edit.onclick = function(){
                               $("#formform").show();
-                              alert(this.id);
+                              //alert(this.id);
                               var ID = this.id;
                               console.log(ID);
 ;
@@ -408,6 +408,8 @@ $(document).ready(function() {
                               div2.style.position = "absolute";
                               div2.style.backgroundColor = "purple";
                               div2.style.height = "auto";
+                              div2.style.float = "left";
+                              div2.style.margin = "0 0 20% 20%";
                               //div2.style.height = "500px;";
                               div2.style.width = "500px";
                               div2.style.top = "20%";
@@ -484,7 +486,7 @@ $(document).ready(function() {
             
         
 });
-});
+//});
 });
         
         
