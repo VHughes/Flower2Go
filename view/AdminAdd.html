@@ -326,7 +326,7 @@ $(document).ready(function() {
                      
                     },
                     success: function(returnedData) {
-                        alert("hey");
+                        alert("Items have been added!");
                         console.log("added start response: ", returnedData); 
                        
 
@@ -354,7 +354,7 @@ $(document).ready(function() {
                         method: "view",
                     },
                     success:function(resp){
-                        alert("view all");
+                        //alert("view all");
                         console.log(resp);
                 
                       for(var i = 0; i<resp.length; i++){

@@ -327,6 +327,8 @@
 
             // cancel the cart
             $("#checkoutcart").click(function() {
+                
+                $('#CartSummary').css("display", "none");
 
                 // retrieve all of the items from the cart:
                 var items = $("#shoppingCart li");
