@@ -44,7 +44,7 @@ class ShoppingCartManager {
     
     
     public function addItemsToCart() {
-
+$items = json_decode($_POST['items'], true);
         foreach($items as $item) {
             $sku = $item['sku'];
             $qty = $item['qty'];
@@ -52,14 +52,9 @@ class ShoppingCartManager {
             // need to look up the ID of the product based on the SKU
             $sql = "SELECT ID FROM product WHERE SKU = '$sku'";
             $rows = $this->db->query($sql);
-            $product_id = $rows[0]['ID'];
-            $sql = "INSERT INTO cart_product (product_id, cart_id, quantity)
-                VALUES ($product_id, $cart_id, $qty)";
-            $this->db->affectRows($sql);
-        }
-
+            
     }
-  
+    }
     public function updateAdminProducts(){
         
         $title = $_POST['newtitle'];
