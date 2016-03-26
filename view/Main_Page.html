@@ -348,7 +348,8 @@
                     url: "../controller/shoppingcart.php",
                     type: "POST",
                     dataType: 'html',
-                    data: {action: "checkoutcart", items: itemsAsJSON},
+                    data: {action: "checkoutcart", 
+                           items: itemsAsJSON},
                     success: function(returnedData) {
                         console.log("cart check out response: ", returnedData);
                         alert("Your order has been processed! Thank-you.");
