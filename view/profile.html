@@ -28,6 +28,10 @@ $(document).ready(function(){
                             data: {
                                 method: "post",
                                 id:sessionStorage.getItem("user"),
+                                id:sessionStorage.getItem("pass"),
+                                id:sessionStorage.getItem("fname"),
+                                id:sessionStorage.getItem("lname"),
+                                id:sessionStorage.getItem("email"),
                             },
                             success: function(resp2){
                                 //alert("heyoOOO");
@@ -35,6 +39,8 @@ $(document).ready(function(){
                                 console.log(resp2);
                                 console.log(sessionStorage.getItem("user"));
                                 console.log(sessionStorage.getItem("pass"));
+                                console.log(sessionStorage.getItem("fname"));
+                                console.log(sessionStorage.getItem("lname"));
                                 
                                 
                                 
@@ -43,8 +49,11 @@ $(document).ready(function(){
                                 //h2.innerHTML = name;
                                 
                                 document.getElementById("welcome").innerHTML = "Welcome " + sessionStorage.getItem("user") + "!";
-                                 document.getElementById("pass").innerHTML = "Username: " + sessionStorage.getItem("pass");
+                                 document.getElementById("pass").innerHTML = "Password: " + sessionStorage.getItem("pass");
                                  document.getElementById("email").innerHTML = "Email: " + sessionStorage.getItem("email");
+                                document.getElementById("fname").innerHTML = "First name: " + sessionStorage.getItem("fname");         
+                                document.getElementById("lname").innerHTML = "Last name: " + sessionStorage.getItem("lname");
+                                document.getElementById("user").innerHTML = "Username: " + sessionStorage.getItem("user");
                                 
                                 /*var but = document.createElement("button");
                                 but.id = "butt";
