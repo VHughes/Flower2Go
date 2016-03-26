@@ -443,6 +443,7 @@ input[type=text]:invalid {
     width: 500px;
     left: 20%;
     bottom: 10%;
+    border-radius: 10px;
    
 
 }
@@ -458,6 +459,7 @@ input[type=text]:invalid {
     height: auto;
     background-color: #ddc0df;
     height: 300px;
+    border-radius: 10px;
 }
 
 .ItemInput {
@@ -567,4 +569,12 @@ th, tr {
 
 .simple_large {
     width: 75%;
+}
+
+#EditItem {
+    position: fixed;
+    margin-top: -20px;
+    margin-left: -50px;
+    color: #ffffff;
+    font-size: 18pt;
 }
