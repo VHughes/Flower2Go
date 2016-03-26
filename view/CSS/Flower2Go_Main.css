@@ -528,6 +528,13 @@ th, tr {
     z-index: 0;
 }
 
+#BackArrow {
+    position:fixed;
+    margin-top: 8px;
+    margin-left: -47%;
+    z-index: 0;
+}
+
 #productTable {
     z-index: -1;
 }
