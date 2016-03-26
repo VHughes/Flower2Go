@@ -578,3 +578,8 @@ th, tr {
     color: #ffffff;
     font-size: 18pt;
 }
+
+.userbuts {
+    width: 75%;
+    margin-left: 13%;
+}
