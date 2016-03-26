@@ -1,4 +1,3 @@
-A ‘readme.txt’ file containing your name (full name), student ID, completion of the project (e.g., 100% complete), any set up instructions, and a quick summary of things that went well, things that didn’t go as expected, and anything you would do differently next time
 
 Student Names:
 Alexis Barbot - 
@@ -7,6 +6,8 @@ Virginia Hughes - A00893034
 To Login: 
 username: Arron
 password: 1234
+
+** Changet the DB password in DBConnector from "password" to "root" **
 
 ** If you hit "Shop" you are brought to the user shopping cart where you can shop and checkout. Be sure to start the cart before shopping **
 
@@ -19,4 +20,20 @@ password: 1234
 Things that don't work:
 - Decryption of the password
 - Depletion of the quantity of available products as the users shop
-- 
+
+Project completion: 80%
+
+Things that went well:
+- Updating/deleting from the database. Once a database connection was established and we could add new items, updating and deleting were quite simple
+
+Things that were challenging:
+- Multiple files made finding bugs incredibly difficult
+- Disprencies between previous MVC knowledge and comfortability and the files given for this project
+- Discrepency between my PC and Alexis' Mac
+
+Things I would do differently:
+- Hire someone to do it differently
+- Get a tutor
+
+Final Thoughts:
+- This was a very challenging project, and many students felt it was beyond the scope of our capabilites

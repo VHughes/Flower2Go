@@ -254,6 +254,7 @@
                     dataType: 'html',
                     data: {action: "cancelcart"},
                     success: function(returnedData) {
+                        alert("cart cancelled!");
                         console.log("cart cancel response: ", returnedData);
 
 
@@ -296,6 +297,7 @@
                     success: function(returnedData) {
                         console.log("cart check out response: ", returnedData);
                         //alert("Your order has been processed! Thank-you.");
+                        alert("You have checked out!");
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
                         console.log(jqXHR.statusText, textStatus);
