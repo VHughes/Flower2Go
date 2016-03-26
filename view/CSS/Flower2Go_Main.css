@@ -438,7 +438,7 @@ input[type=text]:invalid {
     display: none;
     z-index: 100;
     position: fixed;
-    background-color: purple;
+    background-color: #725472;
     height: auto;
     width: 500px;
     left: 20%;
@@ -563,4 +563,8 @@ th, tr {
 
 #CartSummary {
     display: none;
+}
+
+.simple_large {
+    width: 75%;
 }

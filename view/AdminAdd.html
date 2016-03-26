@@ -145,6 +145,7 @@
     </div>
     
     <form id="formform">
+        <br></br>
       <input id="newtitle" class="simple_large" type="text" placeholder="Title"></input><br>
        <input id="newdesc"class="simple_large" type="text" placeholder="Description"></input><br>
        <input id="newqty"class="simple_large" type="text" placeholder="Quantity"></input><br>
@@ -303,7 +304,33 @@ $(document).ready(function() {
 
                 this.closest("li").remove();
 
-            });    */    
+            });    */
+            
+            /////Logging out//////
+            
+            /*$("#BackArrow").click(function() {
+               console.log('logging out');
+                            $.ajax({
+                            url: "../controller/logout.php",
+                            type: "POST",
+                            dataType: "html",
+                            data: {
+                                method: "post",
+                                username: document.getElementById("username").value,
+                                password: document.getElementById("password").value,
+                            },
+                            success: function(resp2){
+                                alert("You are logged out.");
+                                alert(resp2);
+                                console.log(resp2, 'log out');
+                 
+                        }
+                  });
+                    
+                    e.preventDefault();
+            }); */
+                
+            
             $("#add").click(function() {
                 console.log(document.getElementById("title").value);
                 console.log("Adding New Items.");
