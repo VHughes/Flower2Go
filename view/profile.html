@@ -10,8 +10,11 @@
 <body>
     
 <h2 id="welcome"></h2><br>
+<h3 id="fname"></h3>
+<h3 id="lname"></h3>    
 <h3 id="pass"></h3>
 <h3 id="email"></h3>
+
 <span><b></b></span>
 <br></br>
 <button id="but" class="but">Edit Products</button>
@@ -41,19 +44,14 @@ $(document).ready(function(){
                                 console.log(sessionStorage.getItem("pass"));
                                 console.log(sessionStorage.getItem("fname"));
                                 console.log(sessionStorage.getItem("lname"));
-                                
-                                
-                                
-                                //console.log(name);
-                                //console.log(resp2.user.username);
-                                //h2.innerHTML = name;
-                                
+ 
                                 document.getElementById("welcome").innerHTML = "Welcome " + sessionStorage.getItem("user") + "!";
-                                 document.getElementById("pass").innerHTML = "Password: " + sessionStorage.getItem("pass");
-                                 document.getElementById("email").innerHTML = "Email: " + sessionStorage.getItem("email");
+    
                                 document.getElementById("fname").innerHTML = "First name: " + sessionStorage.getItem("fname");         
                                 document.getElementById("lname").innerHTML = "Last name: " + sessionStorage.getItem("lname");
-                                document.getElementById("user").innerHTML = "Username: " + sessionStorage.getItem("user");
+                               
+                                document.getElementById("pass").innerHTML = "Password: " + sessionStorage.getItem("pass");
+                                document.getElementById("email").innerHTML = "Email: " + sessionStorage.getItem("email");
                                 
                                 /*var but = document.createElement("button");
                                 but.id = "butt";
@@ -70,29 +68,26 @@ $(document).ready(function(){
                                 });
                                 
                                 $("#LogOUT").click(function(e){
-				                      alert("hey");
-                                  });
+				                     
+                                    $.ajax({
+                                    url: "../controller/logout.php",
+                                    type: "POST",
+                                    dataType: "html",
+                                    data: {
+                                        method: "post",
+                                        
+                                    },
+                                    success: function(resp2){
+                                        alert("You are logged out.");
+                                        location.href = "index.php";
+                        }
+                  });
+                    
+                    e.preventDefault();
 
+                });
                                 
-                                /*
-                                var username = document.createElement("h3");
-                                var password = document.createElement("h3");
-                                var email = document.createElement("h3");
-                              //  var pass = sessionStorage.getItem("pass");
-                                
-//document.body.appendChild(h2);
-                                document.body.appendChild(username);
-                                document.body.appendChild(password);
-                                document.body.appendChild(email);
-                                
-                                username.innerHTML = sessionStorage.getItem("user");
-                                password.innerHTML = sessionStorage.getItem("pass");
-                                email.innerHTML = sessionStorage.getItem("email");
-                                */
-                                //console.log(username);
-                                //alert(resp2);
-                                //location.href = "profile.html"
-                                //location.href = "Main_Page.html";
+            
                         }
                   });
     

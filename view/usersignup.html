@@ -28,24 +28,6 @@
 <button id="button" data-error="Oops!, Something is wrong" data-success='Success, message sent'>Submit</button>
 </form>
    
-    <!--
-    	<form>
-      <h1>3D Form Validation</h1>
-			<div class="field">
-				<input id="name" type="text" placeholder="Name">
-				<i></i>
-			</div>
-			<div class="field">
-				<input  id='email' type="email" placeholder="Email">
-				<i></i>
-			</div>
-			<textarea id='msg' placeholder="Message"></textarea>
-			<button data-error="Oops!, Something is wrong" data-success='Success, message sent'>Submit</button>
-		</form>
--->
-    
-    
-    
     
     
 </body>    
@@ -104,10 +86,9 @@
                    email: document.getElementById("email").value,
                },
                 success: function(resp){
+                    alert ("hi");
+                    console.log(resp);
                     
-                  //  console.log(resp);
-                    alert("You've Been Registered!");
-                    location.href = "nav.xtml";
                 }
                 
             });

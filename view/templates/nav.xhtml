@@ -17,7 +17,6 @@
     <input type="text" type="password" placeholder="Admin Password" id="password" class="loginInputs"  /><br></br>
  <!-- figure out why the login button has a hover, but the others dont -->
     <button id="submit" class="but">Login</button>
-    <button id="logout" class="LogOutbut">Log out</button><br></br>
     <p>Create a new administrator profile <a href="usersignup.html">here</a></p>
 
 </form>
@@ -25,27 +24,24 @@
 <script>
 
     $(document).ready(function(){
+        
+        
+     $("#shop").click(function(e){
+       
+        location.href = "Main_Page.html";
+          e.preventDefault(); 
+     });
+        
+        
+        
         var id = "";
         var user_id= "";
         //document.getElementById("submit").onclick = function(e){
         $("#submit").click(function(e){
             e.preventDefault();
             console.log('hi');
-/*
-            var x = document.getElementById("username").value;
-            var y = document.getElementById("password").value;
-            if (x == null || x == "") {
-                alert("Name must be filled out");
-                return false;
-            } else if(y == null || y == ""){
-                alert("Please enter a password");
-                return false;
-            } else {
-                alert("Welcome!");
-            }
-            
-            */
-            //alert("DINOSAUR");
+
+       
                         $.ajax({
                             url: "../controller/login.php",
                             type: "POST",
@@ -64,7 +60,7 @@
                     
                                 
                                 var obj = JSON.parse(resp2);
-                                console.log(obj.user.username); 
+                                //console.log(obj.user.username); 
                                 sessionStorage.setItem("user", obj.user.username);
                                 sessionStorage.setItem("pass", obj.user.password);
                                 sessionStorage.setItem("fname", obj.user.firstname);
@@ -74,64 +70,19 @@
                                 
                                 console.log(sessionStorage.getItem("user"));
                                 console.log(sessionStorage.getItem("email"));
-                                document.getElementById("h2").innerHTML = obj.user.username;
+                                
                                 
                                 alert("Welcome " + sessionStorage.getItem("user") + "!");
                                 location.href = "profile.html";
                                 
-                                //h3.innerHTML = obj.username;
-                                //var user = resp2.user;
-                               
-                                //console.log(resp2.name);
-                               // console.log(resp2['user']);
-                                //var resp = sessionStorage.setItem("resp", resp2);
-                                //console.log(resp);
-                             //   console.log(resp2['username']);
-                               //console.log(resp2['user']);
-                               /* if(resp2['username'] != null && resp2['password'] != null) {
-                                sessionStorage.setItem("name", resp2['username']);
-                                sessionStorage.setItem("pass", resp2['password']);
-                                
-                                         } else {
-                                         }*/
-                                //id = resp2;
-                                //sessionStorage.setItem("id", this.id);
-                               
-    
-                                //location.href = "profile.html"
-                                //location.href = "Main_Page.html";
+                             
                         }
                   });
             
                 
                 });
         
-        
-                document.getElementById("logout").onclick = function(e){
-                    console.log('logging out');
-                            $.ajax({
-                            url: "../controller/logout.php",
-                            type: "POST",
-                            dataType: "html",
-                            data: {
-                                method: "post",
-                                username: document.getElementById("username").value,
-                                password: document.getElementById("password").value,
-                            },
-                            success: function(resp2){
-                                alert("You are logged out.");
-                                alert(resp2);
-                                console.log(resp2, 'log out');
-                 
-                        }
-                  });
-                    
-                    e.preventDefault();
 
-                }
-        
-                
-        
     });
 
 

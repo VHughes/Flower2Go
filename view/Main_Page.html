@@ -33,63 +33,9 @@
 
 <body>
     
-    <!--<span id="Welcome">Welcome <b>Arron_Ferguson</b></span><br></br>-->
     <h2>Shopping Cart</h2>
     
-<!--    
-    <img onclick="location.href = 'shoppingcart.html';" id="ShoppingCartBut" src="ASSETS/ShoppingCartIcon.png" height="40px" width="45px"/>
-    <img onclick="location.href = 'adminprofile.html';" id="ProfileBut" src="ASSETS/ProfileIcon.png" height="40px" width="45px"/><br></br>
-    
-<div class="form">
-<button id = "SinglesBut" class = "but">Singles</button></br>
-    
-    
-    
-    
-<div id= 'SinglesDiv' style="display:none;">
-    <div class="imageContainer"> 
-        <div class="SBox1">
-            <p class="overlay" id="Title1"><b>Red Rose</b></p>
-            <h2 id="roseprice">$4.99</h2>
-           <!-- <button class="overlay" id="AddToCart">Add to cart</button>
-            <img id="Single1" class="pic" src="ASSETS/MockItems/Single1.jpg" height="200px" width="200px"/>
-            <button class="BuyNow" id="singlebut">Add to Cart</button>
-        </div>
-        
-        <div class="SBox1">
-            <p class="overlay" id="Title2"><b>Blue Rose</b></p>
-            <h2 id="bluerose">$6.99</h2>
-            <img id="Single2" class="pic" src="ASSETS/MockItems/Single2.jpg" height="200px" width="200px"/>
-            <button class="BuyNow" id="singlebut2" >Add to Cart</button>
-        </div>
-        
-        <div class="SBox1">
-            <p class="overlay" id="Title3"><b>Daffodil</b></p>
-            <h2 id="daff">$2.99</h2>
-            <img id="Single3" class="pic" src="ASSETS/MockItems/Single3.jpg" height="200px" width="200px"/>               <button class="BuyNow" id="singlebut3">Add to Cart</button>
-        </div>
-        
-        <br></br>
-    </div>
-</div>
-    
-    
-    
 
-<button id = "BouquetsBut" class = "but">Bouquets</button></br>
-    <div id= 'BouquetsDiv' style="display:none;">
-        <span id="BBox1"><img id="Bouquet1" class="pic" src="ASSETS/MockItems/Bouquet1.jpg" height="200px" width="200px"/></span>
-        <span id="BBox2"><img id="Bouquet2" class="pic" src="ASSETS/MockItems/Bouquet2.jpg" height="200px" width="200px"/></span>
-        <span id="BBox3"><img id="Bouquet3" class="pic" src="ASSETS/MockItems/Bouquet3.jpg" height="200px" width="200px"/></span>
-    </div>
-<button id = "EventsBut" class = "but">Events</button>
-    <div id= 'EventsDiv' style="display:none;"/>
-        <span id="EBox1"><img id="Event1" class="pic" src="ASSETS/MockItems/Event1.jpg" height="200px" width="200px"/></span>
-        <span id="EBox2"><img id="Event2" class="pic" src="ASSETS/MockItems/Event2.jpg" height="200px" width="200px"/></span>
-        <span id="EBox3"><img id="Event3" class="pic" src="ASSETS/MockItems/Event3.jpg" height="200px" width="200px"/></span>
-    </div>
-</div>  
--->
 <body>
     <div id="content">
 
@@ -365,82 +311,7 @@
 
 
         });
-        /*]]>*/
-
-
-  /*
-    $.ajax({
-            url: "../controller/addToCart.php",
-            type: "POST",
-            dataType: "html",
-            data: {
-        
-        
-    });
-    
-    var single1 = document.getElementById("singlebut");
-    single1.onclick = function(){
-        $.ajax({
-            url: "../controller/addToCart.php",
-            type: "POST",
-            dataType: "html",
-            data: {
-                method: "login_user",
-                title: document.getElementById("Title1").value,
-                price: document.getElementById("")
-                SKU:
-                img:
-            },
-            success: function(resp){
-    }
-        });
-    }
-    
-   /*
-                        $.ajax({
-                            url: "../controller/exist_user.php",
-                            type: "POST",
-                            dataType: "html",
-                            data: {
-                                method: "login_user",
-                                
-                            },
-                            success: function(resp){
-                                console.log(resp);
-                                var form = document.getElementsByName("form");
-                                document.body.appendChild(form);
-                                var h3 = document.createElement("h3");
-                                form.appendChild(h3);
-                                h3.innerHTML = resp.username;
-                                console.log(resp.username);
-                            
-                                } 
-    
-                    });
-    */
-            /*$("#ShoppingCartBut").click(function(){
-            
-            });
-    
-            $("#ProfileBut").click(function(){
-                
-            });
-    
-                    $("#SinglesBut").click(function(){
-				    $("#SinglesDiv").toggle(200);
-		      });
-		
-                    $("#BouquetsBut").click(function(){
-				    $("#BouquetsDiv").toggle(200);
-		      });
-		
-                    $("#EventsBut").click(function(){
-				    $("#EventsDiv").toggle(200);
-
-		      });
-
-});
-*/
+ 
 
 </script>
 
