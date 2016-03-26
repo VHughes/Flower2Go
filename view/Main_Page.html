@@ -270,7 +270,7 @@
 
             // cancel the cart
             $("#checkoutcart").click(function() {
-                
+                $('#Thanks').css("display", "block");
                 $('#CartSummary').css("display", "none");
 
                 // retrieve all of the items from the cart:
@@ -295,7 +295,7 @@
                            items: itemsAsJSON},
                     success: function(returnedData) {
                         console.log("cart check out response: ", returnedData);
-                        alert("Your order has been processed! Thank-you.");
+                        //alert("Your order has been processed! Thank-you.");
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
                         console.log(jqXHR.statusText, textStatus);
