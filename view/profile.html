@@ -13,6 +13,9 @@
 <h3 id="pass"></h3>
 <h3 id="email"></h3>
 <span><b></b></span>
+<br></br>
+<button id="but" class="but">Edit Products</button>
+<button id="LogOUT" class="but">Log out</button>
     
 </body>
     
@@ -43,7 +46,7 @@ $(document).ready(function(){
                                  document.getElementById("pass").innerHTML = "Username: " + sessionStorage.getItem("pass");
                                  document.getElementById("email").innerHTML = "Email: " + sessionStorage.getItem("email");
                                 
-                                var but = document.createElement("button");
+                                /*var but = document.createElement("button");
                                 but.id = "butt";
                                 but.innerHTML = "Edit Products";
                                 
@@ -51,7 +54,16 @@ $(document).ready(function(){
                                 but.onclick = function(){
                                     location.href = "AdminAdd.html";
                                 
-                                }
+                                }*/
+                                
+                                $("#but").click(function(){
+				                    location.href = "AdminAdd.html";
+                                });
+                                
+                                $("#LogOUT").click(function(e){
+				                      alert("hey");
+                                  });
+
                                 
                                 /*
                                 var username = document.createElement("h3");
