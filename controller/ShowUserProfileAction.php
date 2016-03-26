@@ -20,34 +20,24 @@ class ShowUserProfileAction {
 
     public function getProfile() {
 
-        // for true/false values, see:
-        // http://php.net/manual/en/types.comparisons.php
-
-/*
-        if(Session::get('isLoggedIn') && Session::get('username'))*/
-        
+ 
         if(isset($_POST['method'])) {
             
 
-            // here's where we call the user manager which will talk to
-            // the DB for us
             $profile = $this->userManager->getUserProfile();
-            //getUserProfile(Session::get('username'));
+        
 
             if($profile != null) {
-                // found a user by that name
                 return $profile;
                
             } else {
-                // this shouldn't happen since this is not a log in - this is a
-                // profile request. Would be good to report this here as well
-                // in a log file
+     
                 Messages::addMessage("info", "No user of that name.");
                 return null;
             }
 
         } else {
-            // most likely session timed out.
+     
         }
 
         // otherwise

@@ -49,10 +49,5 @@ require_once('Parameters.php');
                 return;
     }
 
-    // lastly send JSON response
-    //echo json_encode($data, JSON_FORCE_OBJECT);
-
-    // for objects do this:
-    // json_encode(get_object_vars($your_object));
 
 ?>

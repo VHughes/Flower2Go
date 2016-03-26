@@ -25,19 +25,7 @@ class UserLogoutAction {
             Session::closeSession();
             Messages::addMessage("info", "Successfully logged out.");
             return true;
-/*
-            $profile = $this->userManager->getUserProfile(Session::get('user_name'));
-
-            if($profile != null) {
-                // log user out
-                Session::closeSession();
-                return true;
-
-            } else {
-                Messages::addMessage("warning", "No user of that name. Logout not performed.");
-            }
-*/
-        } else {
+    } else {
             Messages::addMessage("warning", "'isLoggedIn' parameter not found.");
             return false;
         }

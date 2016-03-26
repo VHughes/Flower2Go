@@ -19,7 +19,7 @@ class UserManager {
         $sql = "SELECT * FROM users WHERE username = $id";
         $rows = $this->db->query($sql);
            
-        //var_dump($rows[0]);
+
         if(count($rows) == 1) {
             return $rows[0];
         }
@@ -38,11 +38,7 @@ class UserManager {
         $rows = $this->db->query($sql, $params);
         if(count($rows) > 0) {
             return $rows[0];
-            
-            //return $sql;
-            //echo $sql;
-            //echo $rows;
-            
+
         }
         
         return null;
@@ -57,21 +53,13 @@ class UserManager {
 
     
     public function addUser($fname, $lname, $usr, $encrypt, $email) {
-        //$params = array(":fname" => $fname, ":lname" => $lname, ":usr" => $usr, ":pwd" => $pwd, ":email" => $email);
+ 
         $sql = "INSERT INTO users (firstname, lastname, username, password, email)
             VALUES ('$fname', '$lname', '$usr', '$encrypt', '$email')";
-        //echo $sql;
+   
         $rows = $this->db->affectRows($sql);
         return $rows;
-        //return $sql;
-        
-        
-        
-        //$affectedRows = $this->db->affectRows($sql);
-        //$rows = $this->db->query($sql, $params);
-       // return $affectedRows;
-       // return $rows;
-       // return $rows;
+
     }
 
 }

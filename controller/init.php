@@ -20,27 +20,5 @@ require_once('../model/DBConnector.php');
 require_once('ProductManager.php');
 require_once('ShoppingCartManager.php');
 
-    
-    /*
-$scripts = array('DBconnector.php',
-                 'Messages.php',
-                 'Parameters.php',
-                 'Session.php',
-                 'ShowUserProfileAction.php',
-                 'UserLoginAction.php',
-                 'UserLogoutAction.php',
-                 'UserManager.php',
-                 'Utils.php');
-/*
-    $subDir = "/";
-
-    foreach($scripts as $script) {
-        require_once($subDir . DIRECTORY_SEPARATOR. $script);
-    }
-
-}
-
-*/
-
 }
 ?>

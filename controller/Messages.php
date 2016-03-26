@@ -1,7 +1,6 @@
 <?php
 
-// http://www.eventhelix.com/RealtimeMantra/PatternCatalog/message_factory_and_interface_pattern.htm
-// Notification
+
 class Messages {
 
     // static AKA class variable - belongs to the class not the object
