@@ -370,17 +370,17 @@ $(document).ready(function() {
                         div.id = resp[i].id;
                         document.body.appendChild(div);
                         
-                        var title = document.createElement("h3");
-                        var price = document.createElement("h3");
-                        var desc = document.createElement("h3");
-                        var qty = document.createElement("h3");
-                        var sku = document.createElement("h3");
+                        var title = document.createElement("h2");
+                        var price = document.createElement("p");
+                        var desc = document.createElement("p");
+                        var qty = document.createElement("p");
+                        var sku = document.createElement("p");
                         
                         title.innerHTML = resp[i].title;
-                        price.innerHTML = resp[i].price;
-                        desc.innerHTML = resp[i].description;
-                        qty.innerHTML = resp[i].quantity;
-                        sku.innerHTML = resp[i].SKU;
+                        price.innerHTML = '<b>Price: </b> $' + resp[i].price;
+                        desc.innerHTML = '<b>Description: </b>' + resp[i].description;
+                        qty.innerHTML = '<b>Quantity: </b>' + resp[i].quantity;
+                        sku.innerHTML = '<b>SKU: </b>' + resp[i].SKU;
                         
                         var edit = document.createElement("button");
                         edit.innerHTML = "Edit This Product";
